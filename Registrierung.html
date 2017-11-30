@@ -12,14 +12,7 @@
 				line-height: 1.5em;
 			}
 			
-			table {
-				height: auto
-				width: auto
-			}
-			select {
-				height: auto
-				width: auto
-			}
+			
 			
 			#header {
 				background: #fecc00;
@@ -152,27 +145,35 @@
 						</tr>
 							<tr>
 							    <th>
-							<label for="vname">Vorname</label>
+							<label for="vname">Vorname:</label>
 							   </th>
 							        <td> 
 							<input id="vname" name="vname"> 
 							        </td>
 							</tr>
 							<tr>
+							    <th>
+							<label for="name">E-Mail:</label>
+							   </th>
+							        <td> 
+							<input id="name" name="name"> 
+							        </td>
+						</tr>
+							<tr>
 							<th>
-						<form action="select.html">
+						<form>
 							<label>Geschlecht:
 							</th>
 							<th>
-								<select name="geschlecht" style= "width: 150px;" >
-										<option>männlich</option>
-										<option>weiblich</option>
+								<input type="radio" name="geschlecht" value="male"> männlich <br>
+								<input type="radio" name="geschlecht" value="female"> weiblich <br>
 							</th>
 							</tr>
 							<tr>
 							<th>
+						</form>
 							<form action="/action_page.php">
-								Birthday:
+								Geburtstag:
 							</th>
 							<th>
 							<input type="date" name="bday" style= "width: 148px;">
@@ -180,7 +181,39 @@
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort</label> 
+								<label> Studiengang:
+							</th>
+							<th>
+								<select>
+									<option>Angewandte Biomedizintechnik </option>
+									<option>Betriebswirtschaftslehre </option>
+									<option>Biomedizinisches Management und Marketing </option>
+									<option>Biomedizinische Technologie </option>
+									<option>Business and Systems Engineering </option>
+									<option>Computervisualistik und Design </option>
+									<option>Energietechnik und Ressourcenoptimierung </option>
+									<option>Intelligent Systems Design </option>
+									<option>Interaktionstechnik und Design </option>
+									<option>Interkulturelle Wirtschaftspsychologie </option>
+									<option>Materialdesign - Bionik und Photonik </option>
+									<option>Mechatronik </option>
+									<option>Product and Asset Management </option>
+									<option>Soziale Medien und Kommunikationsinformatik </option>
+									<option>Sport- und Gesundheitstechnik </option>
+									<option>Technical Consulting und Management </option>
+									<option>Technical Entrepreneurship and Innovation </option>
+									<option>Technisches Management und Marketing </option>
+									<option>Umweltmonitoring und Forensische Chemie </option>
+									<option>Wirtschaftsingenieurwesen </option>
+							
+								</select>
+								
+								</label>
+							</th>
+							</tr>
+							<tr>
+							<th>
+							<label for="pass">Passwort:</label> 
 							    </th>
 								<td>
 							<input id="pass" name="pass" type="password"> 
@@ -188,17 +221,14 @@
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort bestätigen</label> 
+							<label for="pass">Passwort bestätigen:</label> 
 							    </th>
 								<td>
 							<input id="pass" name="pass" type="password"> 
 							    </td>
 							</tr>
 							
-</form>
-    </select>
-  </label>
-</form>
+
 							</select>
 					
 							
