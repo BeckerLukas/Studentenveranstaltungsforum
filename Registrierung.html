@@ -12,7 +12,14 @@
 				line-height: 1.5em;
 			}
 			
-			
+			table {
+				height: auto
+				width: auto
+			}
+			select {
+				height: auto
+				width: auto
+			}
 			
 			#header {
 				background: #fecc00;
@@ -156,22 +163,22 @@
 							<label for="name">E-Mail:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name"> 
+							<input id="name" name="name">@stud.hshl.de
 							        </td>
 						</tr>
 							<tr>
-							<th>
+							
 						<form>
+						<th>
 							<label>Geschlecht:
 							</th>
 							<th>
-								<input type="radio" name="geschlecht" value="male"> männlich <br>
-								<input type="radio" name="geschlecht" value="female"> weiblich <br>
+								<input type="radio" name="geschlecht" value="male"> männlich 
+								<input type="radio" name="geschlecht"  value="female"> weiblich
 							</th>
 							</tr>
 							<tr>
 							<th>
-						</form>
 							<form action="/action_page.php">
 								Geburtstag:
 							</th>
@@ -181,10 +188,12 @@
 							</tr>
 							<tr>
 							<th>
+							<form action="select.html">
 								<label> Studiengang:
 							</th>
 							<th>
 								<select>
+								
 									<option>Angewandte Biomedizintechnik </option>
 									<option>Betriebswirtschaftslehre </option>
 									<option>Biomedizinisches Management und Marketing </option>
@@ -205,10 +214,10 @@
 									<option>Technisches Management und Marketing </option>
 									<option>Umweltmonitoring und Forensische Chemie </option>
 									<option>Wirtschaftsingenieurwesen </option>
-							
-								</select>
 								
+								</select>
 								</label>
+								</form>
 							</th>
 							</tr>
 							<tr>
@@ -228,7 +237,10 @@
 							    </td>
 							</tr>
 							
-
+</form>
+    </select>
+  </label>
+</form>
 							</select>
 					
 							
