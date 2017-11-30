@@ -12,9 +12,10 @@
 				line-height: 1.5em;
 			}
 			
+			
 			#header {
 				background: #fecc00;
-				height: 70px;
+				height: 125px;
 			}
 			
 			#header h1 {
@@ -87,6 +88,40 @@
 		<header id="header">
 			<div class="innertube">
 				<h1>Studentenveranstaltungsforum</h1>
+				<div style="float:right;">
+					<form action="">
+		<table>
+			<tbody>
+							<tr>
+							    <th>
+							<label for="login">Benutzer</label>
+							   </th>
+							        <td> 
+							<input id="login" name="login"> 
+							        </td>
+							</tr>
+							<tr>
+							<th>
+							<label for="pass">Passwort</label> 
+							    </th>
+								<td>
+							<input id="pass" name="pass" type="password"> 
+							    </td>
+							</tr>
+							<tr>
+							<td> </td>
+							<td>
+							<button type="button">Anmelden</button>
+						
+							<p> <a href="#">Noch nicht registriert ?</a></p>
+							</td>
+							</tr>
+		
+				</body>
+			</table>	
+		</form>
+							
+							</div>
 				 
 				
 			</div>
@@ -98,16 +133,24 @@
 				<div id="content">
 					<div class="innertube">
 						<h1>Aktuelle Veranstaltungen</h1>
-							<div style="float:right;">
-							<button type="button">Anmelden</button>
-							<button type="button">Veranstaltungen erstellen</button>
-							<p> <a href="#">Noch nicht registriert ?</a></p>
-							</div>
+							
 						<p> Wir begrüßen DICH auf dem Veranstaltungsforum von und für Studenten der Hochschule-Hamm-Lippstadt. </p>
 						<h2>Aktuelle Meldungen</h2>
 						<p> Hier erwarten sie Mitteilungen zu Änderungen des Studentenveranstaltungsforum. </p>
-						
-						
+						<table border=4 cellspacing=5 cellpadding=15> 
+						<tr>
+							<th> Veranstaltungsname </th>
+							<th> Datum/Uhrzeit </th>
+							<th> Kategorie </th>
+							<th> Verfasser </th>
+						</tr>
+						<tr>
+							<td><a href="#" >Fußball in Lippstadt </a> </td>
+							<td> 29.11.2017/ 15 Uhr </td>
+							<td><a href='#' >Sport</a> </td>
+							<td><a href="#" >Lukas Becker</a> </td>
+						</table>
+			
 					</div>
 				</div>
 			</main>
@@ -120,7 +163,7 @@
 						<li><a href="#">Kneipentour</a></li>
 						<li><a href="#">Stadttheater</a></li>
 						<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-						<li><a href="#">Fest</a></li>
+						<li><a href="#">Fest</a></li
 					</ul>
 					<h3>Sport</h3>
 					<ul>
