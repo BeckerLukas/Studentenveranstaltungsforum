@@ -11,6 +11,9 @@
 				font-family: monospace;
 				line-height: 1.5em;
 			}
+			button {
+				
+			}
 			
 			table {
 				height: auto
@@ -235,10 +238,23 @@
 							    </td>
 							</tr>
 							<tr>
+							<form method="post" enctype="multipart/form-data">
 							<td>
-							<button type="button">Anmelden</button>
+							<label> Wählen Sie ein Profilbild aus.
+							</td>
+
+							<td>
+							<input name="datei" size="10px"
+							type="file" size="50" accept="img/*"> </label>
+							<button> hochladen</button>
 							</td>
 							</tr>
+							<tr>
+							<td>
+							<button type="button" style="clear:right;">Anmelden</button>
+							</td>
+							</tr>
+	</form>
 							
 </form>
     </select>
