@@ -3,6 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title> Studentenveranstaltungsforum; </title>
+		<script type="text/javascript" src="checkRegistrierung.js"></script>
 		<style type="text/css">
 		
 			body {
@@ -166,8 +167,11 @@
 							<label for="name">E-Mail:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name">@stud.hshl.de
+							<input id="email" name="email" onkeyup="checkEmail()">@stud.hshl.de
 							        </td>
+							        <td>
+							<type="text" id="emailtext">
+						        </td>
 						</tr>
 						<tr>
 						<th>
@@ -223,19 +227,23 @@
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort:</label> 
+							<label for="passr">Passwort:</label> 
 							    </th>
 								<td>
-							<input id="pass" name="pass" type="password"> 
+							<input id="passr" name="passr" type="password" onkeyup="checkPasswort()"> 
 							    </td>
+							
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort bestätigen:</label> 
+							<label for="passwd">Passwort bestätigen:</label> 
 							    </th>
 								<td>
-							<input id="pass" name="pass" type="password"> 
-							    </td>
+							<input id="passwd" name="passwd" type="password" onkeyup="checkPasswort()"> 
+							 </td>
+							 	<td>
+							<type="text" id="passtext">
+						        </td>
 							</tr>
 							<tr>
 							<form method="post" enctype="multipart/form-data">
@@ -246,7 +254,6 @@
 							<td>
 							<input name="datei" size="10px"
 							type="file" size="50" accept="img/*"> </label>
-							<button> hochladen</button>
 							</td>
 							</tr>
 							<tr>
