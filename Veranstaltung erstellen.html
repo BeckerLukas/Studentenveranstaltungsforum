@@ -120,7 +120,9 @@
 							    </td>
 							</tr>
 							<tr>
-							<td> </td>
+							<td> 
+							</td>
+							
 							<td>
 							<button type="button">Anmelden</button>
 						
@@ -213,6 +215,17 @@
 							</tr>
 							<tr>
 							    <th>
+							<label for="teilnehmerzahl">Teilnehmerzahl:</label>
+							   </th>
+							        <td> 
+							<input id="teilnehmerzahl" name="teilnehmerzahl" type="number"> 
+							        </td>
+						
+							 
+							 
+						</tr>
+							<tr>
+							    <th>
 							<label for="name">Beschreibung:</label>
 							   </th>
 							        <td> 
@@ -221,14 +234,33 @@
 						</tr>
 						<td>
 						</td>
+						<tr>
+							    <th>
+							<label for="name">Ort:</label>
+							   </th>
+							        <td> 
+							<input id="name" name="name"> 
+							        </td>
+						<td> <input type="button" value="Ort auf Karte anzeigen"
+							onclick="window.location.href='http://maps.google.com/?q'" />
+						</td>	 
+							 
+						</tr>
+						<td>
+						</td>
 						<td>
 						<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div  style="overflow:hidden;height:400px;width:600px;"><div id="map_canvas" style="height:400px;width:600px;"></div><a href="http://www.maps-einbinden.de">google maps für webseite</a></div><script type="text/javascript">window.setTimeout("initGmaps();",300);function initGmaps(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.6712278, 8.340648099999953),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(51.6712278, 8.340648099999953)});infowindow = new google.maps.InfoWindow({content: "<b>Meine Adresse</b><br><br>Lippstadt"});google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
 							 
 						</td>	 
 						
+					
 							<tr>
 							<td>
-							<button type="button" style="clear:right;">Veranstaltung erstellen</button>
+							</td>
+							<td>
+							</td>
+							<td>
+							<button type="submit" style="clear:right;">Veranstaltung erstellen</button>
 							</td>
 							</tr>
 	</form>
@@ -254,7 +286,7 @@
 						<li><a href="#">Kneipentour</a></li>
 						<li><a href="#">Stadttheater</a></li>
 						<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-						<li><a href="#">Fest</a></li>
+						<li><a href="#">Fest</a></li
 					</ul>
 					<h3>Sport</h3>
 					<ul>
