@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="checkRegistrierung.js"> </script>
 		<title> Studentenveranstaltungsforum; </title>
 		<style type="text/css">
 		
@@ -168,7 +169,10 @@
 							<label for="name">E-Mail:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name">@stud.hshl.de
+							<input id="email" name="email" onkeyup="checkEmail()">@stud.hshl.de
+							        </td>
+							        <td>
+							<type="text" id="emailtext">
 							        </td>
 						</tr>
 						<tr>
@@ -225,18 +229,21 @@
 							</tr>
 							<tr>
 							<th ALIGN="LEFT">
-							<label for="pass">Passwort:</label> 
+							<label for="passr">Passwort:</label> 
 							    </th>
 								<td>
-							<input id="pass" name="pass" type="password"> 
+							<input id="passr" name="passr" type="password" onkeyup="checkPasswort()"> 
 							    </td>
 							</tr>
 							<tr>
 							<th ALIGN="LEFT">
-							<label for="pass">Passwort bestätigen:</label> 
+							<label for="passwd">Passwort bestätigen:</label> 
 							    </th>
 								<td>
-							<input id="pass" name="pass" type="password"> 
+							<input id="passwd" name="passwd" type="password" onkeyup="checkPasswort()"> 
+							    </td>
+							    <td>
+							    <type="text" id="passtext">
 							    </td>
 							</tr>
 							<tr>
@@ -283,7 +290,7 @@
 						<li><a href="#">Kneipentour</a></li>
 						<li><a href="#">Stadttheater</a></li>
 						<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-						<li><a href="#">Fest</a></li
+						<li><a href="#">Fest</a></li>
 					</ul>
 					<h3>Sport</h3>
 					<ul>
