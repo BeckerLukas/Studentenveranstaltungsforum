@@ -3,7 +3,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title> Studentenveranstaltungsforum; </title>
-		<script type="text/javascript" src="checkRegistrierung.js"></script>
 		<style type="text/css">
 		
 			body {
@@ -13,6 +12,7 @@
 				line-height: 1.5em;
 			}
 			button {
+			
 				
 			}
 			
@@ -44,9 +44,9 @@
 			
 			#nav {
 				padding-bottom: 10010px;
-				margin-bottom: -10000px;
+				margin-bottom: -9960px;
 				float: left;
-				width: 170px;
+				width: 190px;
 				margin-left: -100%;
 				background: #eee;
 			}
@@ -56,7 +56,7 @@
 				width: 100%;
 				background: #fecc00;
 				text-align: left;
-				padding: 4px 0;
+				padding: 5px 0;
 			}
 	
 			#wrapper {
@@ -95,18 +95,21 @@
 	
 	</head>
 	
-	<body>		
+	<body background="bgimg.jpg" >		
 
-		<header id="header">
-			<div class="innertube">
+		<header id="header"  > 
+			<div class="innertube"> 
 				<h1>Studentenveranstaltungsforum</h1>
+			
+				
+				
 				<div style="float:right;">
 					<form action="">
 		<table>
 			<tbody>
 							<tr>
 							    <th>
-							<label for="login">E-Mail</label>
+							<label for="login">E-Mail:</label>
 							   </th>
 							        <td> 
 							<input id="login" name="login"> 
@@ -114,7 +117,7 @@
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort</label> 
+							<label for="pass">Passwort:</label> 
 							    </th>
 								<td>
 							<input id="pass" name="pass" type="password"> 
@@ -124,8 +127,6 @@
 							<td> </td>
 							<td>
 							<button type="button">Anmelden</button>
-						
-							<p> <a href="file:///D:/Dokumente%20Studium/3.Semester/Softwareprojekt/Studentenveranstaltungsforum/Registrierung.html">Noch nicht registriert ?</a></p>
 							</td>
 							</tr>
 		
@@ -147,15 +148,15 @@
 						<h1>Registrierung</h1>
 					<table>
 						<tr>
-							    <th>
+							    <th ALIGN="LEFT">
 							<label for="name">Name:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name"> 
+							<input id="name" name="name" > 
 							        </td>
 						</tr>
 							<tr>
-							    <th>
+							    <th ALIGN="LEFT">
 							<label for="vname">Vorname:</label>
 							   </th>
 							        <td> 
@@ -163,27 +164,24 @@
 							        </td>
 							</tr>
 							<tr>
-							    <th>
+							    <th ALIGN="LEFT">
 							<label for="name">E-Mail:</label>
 							   </th>
 							        <td> 
-							<input id="email" name="email" onkeyup="checkEmail()">@stud.hshl.de
+							<input id="name" name="name">@stud.hshl.de
 							        </td>
-							        <td>
-							<type="text" id="emailtext">
-						        </td>
 						</tr>
 						<tr>
-						<th>
+						<th ALIGN="LEFT">
 							<label>Geschlecht:
 						</th>	
 							<td>
-								<input type="radio" name="geschlecht" value="male"> männlich 
-								<input type="radio" name="geschlecht" value="female"> weiblich
+								<input type="radio" name="geschlecht" value="male"> m
+								<input type="radio" name="geschlecht" value="female"> w
 							</td>
 							</tr>
 							<tr>
-							<th>
+							<th ALIGN="LEFT">
 							<form action="/action_page.php">
 								Geburtstag:
 							</th>
@@ -192,7 +190,7 @@
 							</td>
 							</tr>
 							<tr>
-							<th>
+							<th ALIGN="LEFT">
 							<form action="select.html">
 								<label> Studiengang:
 							</th>
@@ -226,39 +224,40 @@
 							</td>
 							</tr>
 							<tr>
-							<th>
-							<label for="passr">Passwort:</label> 
+							<th ALIGN="LEFT">
+							<label for="pass">Passwort:</label> 
 							    </th>
 								<td>
-							<input id="passr" name="passr" type="password" onkeyup="checkPasswort()"> 
+							<input id="pass" name="pass" type="password"> 
 							    </td>
-							
 							</tr>
 							<tr>
-							<th>
-							<label for="passwd">Passwort bestätigen:</label> 
+							<th ALIGN="LEFT">
+							<label for="pass">Passwort bestätigen:</label> 
 							    </th>
 								<td>
-							<input id="passwd" name="passwd" type="password" onkeyup="checkPasswort()"> 
-							 </td>
-							 	<td>
-							<type="text" id="passtext">
-						        </td>
+							<input id="pass" name="pass" type="password"> 
+							    </td>
 							</tr>
 							<tr>
 							<form method="post" enctype="multipart/form-data">
-							<td>
-							<label> Wählen Sie ein Profilbild aus.
-							</td>
+							<th ALIGN="LEFT">
+							<label> Profilbild:
+							</th>
 
 							<td>
 							<input name="datei" size="10px"
 							type="file" size="50" accept="img/*"> </label>
+							
 							</td>
 							</tr>
 							<tr>
 							<td>
-							<button type="button" style="clear:right;">Anmelden</button>
+							</td>
+							<td>
+							</td>
+							<td>
+							<button type="submit" style="clear:right;">Anmelden</button>
 							</td>
 							</tr>
 	</form>
@@ -284,7 +283,7 @@
 						<li><a href="#">Kneipentour</a></li>
 						<li><a href="#">Stadttheater</a></li>
 						<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-						<li><a href="#">Fest</a></li>
+						<li><a href="#">Fest</a></li
 					</ul>
 					<h3>Sport</h3>
 					<ul>
