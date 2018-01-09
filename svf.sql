@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Dez 2017 um 15:49
+-- Erstellungszeit: 09. Jan 2018 um 20:22
 -- Server-Version: 10.1.25-MariaDB
 -- PHP-Version: 7.1.7
 
@@ -32,7 +32,8 @@ CREATE TABLE `beitrag` (
   `Beitrags-ID` bigint(255) NOT NULL,
   `Verfasser` bigint(255) NOT NULL,
   `Veranstaltung` bigint(255) NOT NULL,
-  `Inhalt` text NOT NULL
+  `Inhalt` text NOT NULL,
+  `Zeit` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -61,7 +62,8 @@ CREATE TABLE `benutzer` (
   `Geschlecht` varchar(8) NOT NULL,
   `Studiengang` varchar(40) NOT NULL,
   `Geburtstag` date NOT NULL,
-  `Profilbild` varchar(1000) NOT NULL
+  `Profilbild` varchar(1000) NOT NULL,
+  `Session` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,7 +117,8 @@ ALTER TABLE `beitreten`
 -- Indizes für die Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  ADD PRIMARY KEY (`Benutzer-ID`);
+  ADD PRIMARY KEY (`Benutzer-ID`),
+  ADD UNIQUE KEY `E-Mail` (`E-Mail`);
 
 --
 -- Indizes für die Tabelle `kategorie`
