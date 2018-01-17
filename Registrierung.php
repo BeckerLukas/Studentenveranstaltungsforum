@@ -294,6 +294,8 @@ if(isset($_GET["page"])){
           echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
       else if(strlen($email) < 1)
           echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+      else if(strpos($email,".")==False)
+          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
       else if(strlen($name)< 1)
           echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
       else if(strlen($vname) <1)
