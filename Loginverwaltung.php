@@ -1,42 +1,47 @@
 <?php
-function connect()
-{
-    $con=mysql_connect('localhost','test','12345678') or die(mysql_error());
-    mysql_select_db('SVF',$con) or die(mysql_error());
-}
 
-function check_user($name, $pass)
+$con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+
+
+function check_user($email, $pass)
 {
-    $sql="SELECT Benutzer-ID
-    FROM benutzer
-    WHERE E-Mail='".$email."' AND Passwort=MD5('".$pass."')
-    LIMIT 1";
-    $result=mysql_query($sql) or die(mysql_error());
-    if (mysql_num_rows($result)==1)
-    {
-        $user=mysql_fetch_assoc($result);
-        return $user['Benutzer-ID'];
+  
+    $con=mysqli_connect("localhost","test","12345678", "SVF") 
+    or die("Es konnte Keine Verbindung zur Datenbank aufgenommen werden");
+    $email=strtolower($email);
+    $pass=md5($pass);
+    $sql = "SELECT BenutzerID FROM benutzer WHERE EMail = '$email' AND Passwort = '$pass'  LIMIT 1";
+    $result= mysqli_query($con, $sql) or die("Es konnte keine Verbindung hergestellt werden");
+    if(mysqli_num_rows($result) == 1){
+        $user= mysqli_fetch_assoc($result);
+        return $user['BenutzerID'];
     }
-    else
+    else{
         return false;
+    }
 }
 
 function login($userid)
 {
+    $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+    $session = session_id();
+    print $session;
     $sql="UPDATE benutzer
-    SET Session='".session_id()."'
-    WHERE Benutzer-ID=".$userid;
-    mysql_query($sql);
+    SET Session='$session'
+    WHERE BenutzerID='$userid'";
+    mysqli_query($con, $sql);
 }
 
 function logged_in()
 {
-    $sql="SELECT Benutzer-ID
+    $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+    $session=session_id();
+    $sql="SELECT BenutzerID
     FROM benutzer
-    WHERE Session='".session_id()."'
+    WHERE Session='$session'
     LIMIT 1";
-    $result=mysql_query($sql);
-    return (mysql_num_rows($result)==1);
+    $result=mysqli_query($con, $sql);
+    return (mysqli_num_rows($result)==1);
 }
 
 function logout()
@@ -44,8 +49,7 @@ function logout()
     $sql="UPDATE benutzer
     SET Session=NULL
     WHERE Session='".session_id()."'";
-    mysql_query($sql);
+    mysqli_query($con, $sql);
 }
 
-connect();
 ?>

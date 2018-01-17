@@ -314,13 +314,13 @@ if(isset($_GET["page"])){
           or die ("Verbindung zur Datenbank konnte nicht hergestellt werden");
          
           $control=0;
-          $abfrage ="SELECT 'EMail' FROM `benutzer` WHERE 'EMail' = '$email'";
+          $abfrage ="SELECT EMail FROM benutzer WHERE EMail = '$email'";
           $ergebnis = mysqli_query($verbindung, $abfrage);
           while($row = mysqli_fetch_object($ergebnis)){
               $control++;
           }
           if($control != 0){
-              echo "E-Mail wurde bereits verwendet... <a href=\"http://localhost/SVF/applications.html/Registrierung.php\>zurück</a>";
+              echo "E-Mail wurde bereits verwendet... <a href=\"http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
           }else {
               $eintrag = "INSERT INTO benutzer
               (EMail, Passwort, Name, Vorname, Geschlecht, Studiengang, Geburtstag)
