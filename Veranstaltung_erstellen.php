@@ -2,7 +2,7 @@
 include 'Loginverwaltung.php';
 session_start();
 if(logged_in()==false){
-    echo 'Sie haben keine Berechtigung für diese Seite<a href="Index.php">zurück zur Startseite</a>';
+    echo 'Sie haben keine Berechtigung fÃ¼r diese Seite<a href="Index.php">zurÃ¼ck zur Startseite</a>';
 }else{
 ?>
 <html>
@@ -16,6 +16,7 @@ if(logged_in()==false){
 				padding:0;
 				font-family: fantasy;
 				line-height: 1.5em;
+				font-size: large;
 			}
 			button {
 				
@@ -112,7 +113,7 @@ if(logged_in()==false){
 			<tbody>
 							<tr>
 							    <th>
-							<label for="Begrüßung">Hallo, </label><?php echo begrüßung();?>
+							<label for="BegrÃ¼ÃŸung">Hallo, </label><?php echo begrÃ¼ÃŸung();?>
 							   </th>
 							</tr>
 							<tr>
@@ -163,10 +164,10 @@ if(logged_in()==false){
 							<td>
 								<select name="kategorie">
 								
-									<option value="1">BÃ¼chergruppe </option>
+									<option value="1">BÃƒÂ¼chergruppe </option>
 									<option value="2">Fest </option>
 									<option value="3">Fitness </option>
-									<option value="4">FuÃŸball </option>
+									<option value="4">FuÃƒÅ¸ball </option>
 									<option value="5">Joggen </option>
 									<option value="6">Kanutour </option>
 									<option Value="7">Kino </option>
@@ -243,7 +244,7 @@ if(logged_in()==false){
 						<td>
 						</td>
 						<td>
-						<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div  style="overflow:hidden;height:400px;width:600px;"><div id="map_canvas" style="height:400px;width:600px;"></div><a href="http://www.maps-einbinden.de">google maps fÃ¼r webseite</a></div><script type="text/javascript">window.setTimeout("initGmaps();",300);function initGmaps(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.6712278, 8.340648099999953),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(51.6712278, 8.340648099999953)});infowindow = new google.maps.InfoWindow({content: "<b>Meine Adresse</b><br><br>Lippstadt"});google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
+						<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div  style="overflow:hidden;height:400px;width:600px;"><div id="map_canvas" style="height:400px;width:600px;"></div><a href="http://www.maps-einbinden.de">google maps fÃƒÂ¼r webseite</a></div><script type="text/javascript">window.setTimeout("initGmaps();",300);function initGmaps(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.6712278, 8.340648099999953),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(51.6712278, 8.340648099999953)});infowindow = new google.maps.InfoWindow({content: "<b>Meine Adresse</b><br><br>Lippstadt"});google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
 							 
 						</td>	 
 						
@@ -274,16 +275,16 @@ if(isset($_GET["page"])){
         $ort = ($_POST["ort"]);
         
       if(strlen($veranstaltungsname)< 1)
-          echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurÃ¼ck</a>";
      else if($teilnehmerzahl<1){
          print $teilnehmerzahl;
-          echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurÃ¼ck</a>";
      } else if(strlen($beschreibung) <1)
-          echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurÃ¼ck</a>";
       else if(!isset($datum))
-          echo"<br>Bitte wählen Sie ein Datum für Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo"<br>Bitte wÃ¤hlen Sie ein Datum fÃ¼r Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurÃ¼ck</a>";
       else if(strlen($ort)< 1){
-          echo "<br>Bitte geben Sie den gewünschten Ort der Veranstaltung an! <a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie den gewÃ¼nschten Ort der Veranstaltung an! <a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurÃ¼ck</a>";
       }else {
           $verbindung=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
           $session=session_id();
@@ -302,9 +303,9 @@ if(isset($_GET["page"])){
              ('$ersteller', '$kategorie', '$veranstaltungsname','$datum', '$uhrzeit', '$beschreibung', '$teilnehmerzahl')";
           $eintragen = mysqli_query($verbindung, $eintrag);
           }if ($eintragen== true){
-              echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zurück zur Startseite</a>";
+              echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">ZurÃ¼ck zur Startseite</a>";
           }else{
-              echo "<br>Fehler. Bitte versuchen Sie es später erneut!";
+              echo "<br>Fehler. Bitte versuchen Sie es spÃ¤ter erneut!";
           }
       }
     }
@@ -326,7 +327,7 @@ if(isset($_GET["page"])){
 					</ul>
 					<h3>Sport</h3>
 					<ul>
-						<li><a href="#">FuÃŸball</a></li>
+						<li><a href="#">FuÃƒÅ¸ball</a></li>
 						<li><a href="#">Volleyball</a></li>
 						<li><a href="#">Kanutour</a></li>
 						<li><a href="#">Joggen</a></li>
