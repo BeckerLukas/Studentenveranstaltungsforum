@@ -92,7 +92,7 @@ session_start();
 
 		<header id="header">
 			<div class="innertube">
-			<img src ="C:\Users\Louisa\Documents\3 semester\projekt\neu.png" alt"Studentenveranstaltungsforum"
+			<img src ="neu.png" alt"Studentenveranstaltungsforum"
 			width="150" height="135">
 				<div style="float:right;">
 <?php if(logged_in() == false)
@@ -138,7 +138,7 @@ session_start();
 			<tbody>
 							<tr>
 							    <th>
-							<label for="Begrüßung">Hallo, </label><?php echo begrüßung();?>
+							<label for="Begrüßung">Hallo, </label><?php echo begr��ung();?>
 							   </th>
 							</tr>
 							<tr>

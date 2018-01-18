@@ -288,23 +288,23 @@ if(isset($_GET["page"])){
         $bday = ($_POST["bday"]);
         
       if($passwortr != $passwortwd)
-          echo "<br>Ihre Passwter stimmen nicht �erein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Ihre Passwter stimmen nicht �erein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if (strlen($passwortr) > 20 or strlen($passwortr) < 8 )
-          echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(strlen($email) < 1)
-          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(strpos($email,".")==False)
-          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(strlen($name)< 1)
-          echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(strlen($vname) <1)
-          echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(!isset($geschlecht))
-          echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(strlen($studiengang) <1)
-          echo "<br>Bitte w臧len Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo "<br>Bitte w臧len Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
       else if(!isset($bday)){
-          echo"<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+          echo"<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
          
       }else {
           $passwortr=md5($passwortr);
@@ -319,7 +319,7 @@ if(isset($_GET["page"])){
               $control++;
           }
           if($control != 0){
-              echo "E-Mail wurde bereits verwendet... <a href=\"http://localhost/SVF/applications.html/Registrierung.php>zur�k</a>";
+              echo "E-Mail wurde bereits verwendet... <a href=Registrierung.php>zur�k</a>";
           }else {
               $eintrag = "INSERT INTO benutzer
               (EMail, Passwort, Name, Vorname, Geschlecht, Studiengang, Geburtstag)

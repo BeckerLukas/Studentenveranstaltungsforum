@@ -275,16 +275,16 @@ if(isset($_GET["page"])){
         $ort = ($_POST["ort"]);
         
       if(strlen($veranstaltungsname)< 1)
-          echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
      else if($teilnehmerzahl<1){
          print $teilnehmerzahl;
-          echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
      } else if(strlen($beschreibung) <1)
-          echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
       else if(!isset($datum))
-          echo"<br>Bitte wählen Sie ein Datum für Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo"<br>Bitte wählen Sie ein Datum für Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
       else if(strlen($ort)< 1){
-          echo "<br>Bitte geben Sie den gewünschten Ort der Veranstaltung an! <a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+          echo "<br>Bitte geben Sie den gewünschten Ort der Veranstaltung an! <a href=Veranstaltung_erstellen.php>zurück</a>";
       }else {
           $verbindung=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
           $session=session_id();
