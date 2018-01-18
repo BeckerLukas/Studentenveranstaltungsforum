@@ -12,7 +12,7 @@ session_start();
 			body {
 				margin:0;
 				padding:0;
-				font-family: monospace;
+				font-family: fantasy;
 				line-height: 1.5em;
 			}
 			
@@ -91,7 +91,8 @@ session_start();
 
 		<header id="header">
 			<div class="innertube">
-				<h1>Studentenveranstaltungsforum</h1>
+			<img src ="C:\Users\Louisa\Documents\3 semester\projekt\neu.png" alt"Studentenveranstaltungsforum"
+			width="150" height="135">
 				<div style="float:right;">
 <?php if(logged_in() == false)
 {
@@ -136,7 +137,7 @@ session_start();
 			<tbody>
 							<tr>
 							    <th>
-							<label for="Begr¸ﬂung">Hallo, </label><?php echo begr¸ﬂung();?>
+							<label for="Begr√º√üung">Hallo, </label><?php echo begr√º√üung();?>
 							   </th>
 							</tr>
 							<tr>
@@ -168,9 +169,9 @@ session_start();
 					<div class="innertube">
 						<h1>Aktuelle Veranstaltungen</h1>
 							
-						<p> Wir begr¸ﬂen DICH auf dem Veranstaltungsforum von und f¸r Studenten der Hochschule-Hamm-Lippstadt. </p>
+						<p> Wir begr√º√üen DICH auf dem Veranstaltungsforum von und f√ºr Studenten der Hochschule-Hamm-Lippstadt. </p>
 						<h2>Aktuelle Meldungen</h2>
-						<p> Hier erwarten sie Mitteilungen zu ƒnderungen des Studentenveranstaltungsforum. </p>
+						<p> Hier erwarten sie Mitteilungen zu √Ñnderungen des Studentenveranstaltungsforum. </p>
 						<table border=4 cellspacing=5 cellpadding=15> 
 						<tr>
 							<th> Veranstaltungsname </th>
@@ -179,7 +180,7 @@ session_start();
 							<th> Verfasser </th>
 						</tr>
 						<tr>
-							<td><a href="#" >Fuﬂball in Lippstadt </a> </td>
+							<td><a href="#" >Fu√üball in Lippstadt </a> </td>
 							<td> 29.11.2017/ 15 Uhr </td>
 							<td><a href='#' >Sport</a> </td>
 							<td><a href="#" >Lukas Becker</a> </td>
@@ -201,7 +202,7 @@ session_start();
 					</ul>
 					<h3>Sport</h3>
 					<ul>
-						<li><a href="#">Fuﬂball</a></li>
+						<li><a href="#">Fu√üball</a></li>
 						<li><a href="#">Volleyball</a></li>
 						<li><a href="#">Kanutour</a></li>
 						<li><a href="#">Joggen</a></li>
