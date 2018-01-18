@@ -199,7 +199,6 @@
 							</tr>
 							<tr>
 							<th ALIGN="LEFT">
-							<form action="select.html">
 								<label> Studiengang:
 							</th>
 							<td>
@@ -226,7 +225,6 @@
 									<option value="Wirtschaftsingenieurwesen">Wirtschaftsingenieurwesen </option>	
 								</select>
 								</label>
-								</form>
 							</td>
 							</tr>
 							<tr>

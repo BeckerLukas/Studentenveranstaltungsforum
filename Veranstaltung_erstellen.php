@@ -1,3 +1,10 @@
+<?php
+include 'Loginverwaltung.php';
+session_start();
+if(logged_in()==false){
+    echo 'Sie haben keine Berechtigung für diese Seite<a href="Index.php">zurück zur Startseite</a>';
+}else{
+?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -97,42 +104,28 @@
 
 		<header id="header">
 			<div class="innertube">
-			<img src ="C:\Users\Louisa\Documents\3 semester\projekt\neu.png" alt"Studentenveranstaltungsforum"
+			<img src ="neu.png" alt"Studentenveranstaltungsforum"
 			width="150" height="135">
 				<div style="float:right;">
-					<form action="">
+					 <form action="Ausloggen.php" method="post">
 		<table>
 			<tbody>
 							<tr>
 							    <th>
-							<label for="login">E-Mail:</label>
+							<label for="Begrüßung">Hallo, </label><?php echo begrüßung();?>
 							   </th>
-							        <td> 
-							<input id="login" name="login"> 
-							        </td>
 							</tr>
 							<tr>
 							<th>
-							<label for="pass">Passwort:</label> 
-							    </th>
-								<td>
-							<input id="pass" name="pass" type="password"> 
-							    </td>
+							<button type="submit" id="ausloggen" name="ausloggen" ">Abmelden</button>
+							</th>
 							</tr>
-							<tr>
-							<td> 
-							</td>
 							
-							<td>
-							<button type="button">Anmelden</button>
-						
-							<p> <a href="file:///D:/Dokumente%20Studium/3.Semester/Softwareprojekt/Studentenveranstaltungsforum/Registrierung.html">Noch nicht registriert ?</a></p>
-							</td>
-							</tr>
-		
-				</body>
+							
+		            
+				</tbody>
 			</table>	
-		</form>
+	</form>
 							
 							</div>
 				 
@@ -146,13 +139,17 @@
 				<div id="content">
 					<div class="innertube">
 						<h1>Veranstaltung erstellen</h1>
+<?php if(!isset($_GET["page"]))
+{
+ ?>
+				<form action="Veranstaltung_erstellen.php?page=2" method="post">
 					<table>
 						<tr>
 							    <th ALIGN="LEFT">
-							<label for="name">Veranstaltungsname:</label>
+							<label for="vname">Veranstaltungsname:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name"> 
+							<input id="vname" name="vname"> 
 							        </td>
 						
 							 
@@ -161,41 +158,39 @@
 						<tr>
 							<th ALIGN="LEFT">
 							<form action="select.html">
-								<label> Kategorie:
+								<label> Kategorie: </label>
 							</th>
 							<td>
-								<select>
+								<select name="kategorie">
 								
-									<option>BÃ¼chergruppe </option>
-									<option>Fest </option>
-									<option>Fitness </option>
-									<option>FuÃŸball </option>
-									<option>Joggen </option>
-									<option>Kanutour </option>
-									<option>Kino </option>
-									<option>Kneipentour </option>
-									<option>Lerngruppe </option>
-									<option>Minigolf </option>
-									<option>Party </option>
-									<option>Radtour </option>
-									<option>Reisen </option>
-									<option>Stadtbesichtigung </option>
-									<option>Stadttheater </option>
-									<option>Spieleabend </option>
-									<option>Treffen </option>
-									<option>Volleyball </option>
-									<option>Yoga </option>
-									<option>Sonstiges </option>
+									<option value="1">BÃ¼chergruppe </option>
+									<option value="2">Fest </option>
+									<option value="3">Fitness </option>
+									<option value="4">FuÃŸball </option>
+									<option value="5">Joggen </option>
+									<option value="6">Kanutour </option>
+									<option Value="7">Kino </option>
+									<option value="8">Kneipentour </option>
+									<option value="9">Lerngruppe </option>
+									<option value=10">Minigolf </option>
+									<option value="11">Party </option>
+									<option value="12">Radtour </option>
+									<option value="13">Reisen </option>
+									<option value="14">Stadtbesichtigung </option>
+									<option value="15">Stadttheater </option>
+									<option value="16">Spieleabend </option>
+									<option value="17">Treffen </option>
+									<option value="18">Volleyball </option>
+									<option value="19">Yoga </option>
+									<option value="20">Sonstiges </option>
 								
 								</select>
-								</label>
-								</form>
+							
 							</td>
 							</tr>
 						
 							<tr>
 							<th ALIGN="LEFT">
-							<form action="/action_page.php">
 								Datum:
 							</th>
 							<td>
@@ -206,12 +201,11 @@
 							<tr>
 							<th ALIGN="LEFT">
 							
-							<label> Uhrzeit:
+							<label> Uhrzeit: </label>
 							</th>
 							<td>
-							<input type="time" name="UhrZeit" placeholder="23:59:59">
+							<input type="time" name="uhrzeit" placeholder="23:59:59">
 							</td>
-							</label>
 							</tr>
 							<tr>
 							    <th ALIGN="LEFT">
@@ -229,18 +223,17 @@
 							<label for="name">Beschreibung:</label>
 							   </th>
 							         <td> 
-							<textarea class="textb" cols="80" rows="5" maxlength="280" >Beschreibung schreiben...
+							<textarea class="textb" cols="80" rows="5" maxlength="280" name="beschreibung" >Beschreibung schreiben...
 							</textarea>
 												</td>
 						</tr>
-						<td>
-						</td>
+			
 						<tr>
 							    <th ALIGN="LEFT">
 							<label for="name">Ort:</label>
 							   </th>
 							        <td> 
-							<input id="name" name="name"> 
+							<input id="name" name="ort"> 
 							        </td>
 						<td> <input type="button" value="Ort auf Karte anzeigen"
 							onclick="window.location.href='http://maps.google.com/?q'" />
@@ -263,18 +256,60 @@
 							<td>
 							<button type="submit" style="clear:right;">Veranstaltung erstellen</button>
 							</td>
-							</tr>
-	</form>
-							
-</form>
-    </select>
-  </label>
-</form>
-							</select>
-					
-							
+							</tr>		
 					</table>	
-			
+			</form>
+<?php 
+}
+?>
+<?php 
+if(isset($_GET["page"])){
+    if($_GET["page"]=="2"){
+        $veranstaltungsname = ($_POST["vname"]);
+        $kategorie = ($_POST["kategorie"]);
+        $datum = ($_POST["vdate"]);
+        $uhrzeit = ($_POST["uhrzeit"]);
+        $teilnehmerzahl = ($_POST["teilnehmerzahl"]);
+        $beschreibung = ($_POST["beschreibung"]);
+        $ort = ($_POST["ort"]);
+        
+      if(strlen($veranstaltungsname)< 1)
+          echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+     else if($teilnehmerzahl<1){
+         print $teilnehmerzahl;
+          echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+     } else if(strlen($beschreibung) <1)
+          echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+      else if(!isset($datum))
+          echo"<br>Bitte wählen Sie ein Datum für Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+      else if(strlen($ort)< 1){
+          echo "<br>Bitte geben Sie den gewünschten Ort der Veranstaltung an! <a href=http://localhost/SVF/applications.html/Veranstaltung_erstellen.php>zurück</a>";
+      }else {
+          $verbindung=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+          $session=session_id();
+          $sql="SELECT BenutzerID
+          FROM benutzer
+          WHERE Session = '$session'
+          LIMIT 1";
+          $result=mysqli_query($verbindung, $sql);
+          if(mysqli_num_rows($result) == 1){
+          $ersteller= mysqli_fetch_assoc($result);
+          $ersteller=$ersteller['BenutzerID'];
+          $eintrag = "INSERT INTO veranstaltung
+              (Ersteller, Kategorie, Veranstaltungsname, Datum, Uhrzeit, Beschreibung, Teilnehmerzahl)
+
+              VALUES
+             ('$ersteller', '$kategorie', '$veranstaltungsname','$datum', '$uhrzeit', '$beschreibung', '$teilnehmerzahl')";
+          $eintragen = mysqli_query($verbindung, $eintrag);
+          }if ($eintragen== true){
+              echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zurück zur Startseite</a>";
+          }else{
+              echo "<br>Fehler. Bitte versuchen Sie es später erneut!";
+          }
+      }
+    }
+}
+?>
 					</div>
 				</div>
 			</main>
@@ -318,3 +353,6 @@
 	
 	</body>
 </html>
+<?php 
+}
+?>
