@@ -1,5 +1,6 @@
 <?php 
 include 'Loginverwaltung.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,7 +120,7 @@ include 'Loginverwaltung.php';
 							<td>
 							<button type="submit" id="login" name="login" value="Einloggen">Anmelden</button>
 						
-							<p> <a href="#">Noch nicht registriert ?</a></p>
+							<p> <a href="Registrierung.php">Noch nicht registriert ?</a></p>
 							</td>
 							</tr>
 		            
@@ -127,6 +128,30 @@ include 'Loginverwaltung.php';
 			</table>	
 	 </form>
 	
+<?php 
+}else{
+?>
+       <form action="Ausloggen.php" method="post">
+		<table>
+			<tbody>
+							<tr>
+							    <th>
+							<label for="Begrüßung">Hallo, </label><?php echo begrüßung();?>
+							   </th>
+							</tr>
+							<tr>
+							<th>
+							<button type="submit" id="ausloggen" name="ausloggen" ">Abmelden</button>
+							</th>
+							</tr>
+							
+							
+		            
+				</tbody>
+			</table>	
+	</form>
+
+
 <?php 
 }
 ?>							

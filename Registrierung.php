@@ -329,7 +329,7 @@ if(isset($_GET["page"])){
              ('$email', '$passwortr', '$name','$vname', '$geschlecht', '$studiengang', '$bday')";
           $eintragen = mysqli_query($verbindung, $eintrag);
           }if ($eintragen== true){
-              echo "Vielen Dank. Sie haben sich nun registriert..<a href=\"Vorlage Website.html\">Jetzt anmelden</a>";
+              echo "Vielen Dank. Sie haben sich nun registriert..<a href=\"Index.php\">Jetzt anmelden</a>";
           }else{
               echo "<br>Fehler. Bitte versuchen Sie es später erneut!";
           }
