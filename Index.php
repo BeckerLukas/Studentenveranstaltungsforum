@@ -172,7 +172,7 @@ session_start();
 						<p> Wir begrüßen DICH auf dem Veranstaltungsforum von und für Studenten der Hochschule-Hamm-Lippstadt. </p>
 						<h2>Aktuelle Meldungen</h2>
 						<p> Hier erwarten sie Mitteilungen zu Änderungen des Studentenveranstaltungsforum. </p>
-						<table border=4 cellspacing=5 cellpadding=15> 
+						<table border=9 cellspacing=8 cellpadding=21> 
 						<tr>
 							<th> Veranstaltungsname </th>
 							<th> Datum/Uhrzeit </th>
