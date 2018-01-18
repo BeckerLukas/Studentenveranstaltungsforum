@@ -11,6 +11,7 @@
 				padding:0;
 				font-family: fantasy;
 				line-height: 1.5em;
+				font-size: large;
 			}
 			button {
 			
@@ -237,7 +238,7 @@
 							</tr>
 							<tr>
 							<th ALIGN="LEFT">
-							<label for="passwd">Passwort bestÃ¤tigen:</label> 
+							<label for="passwd">Passwort bestï¾ƒï½¤tigen:</label> 
 							    </th>
 								<td>
 							<input id="passwd" name="passwd" type="password" onkeyup="checkPasswort()"> 
@@ -287,23 +288,23 @@ if(isset($_GET["page"])){
         $bday = ($_POST["bday"]);
         
       if($passwortr != $passwortwd)
-          echo "<br>Ihre Passwörter stimmen nicht überein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Ihre Passwî’šter stimmen nicht ï¿½erein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if (strlen($passwortr) > 20 or strlen($passwortr) < 8 )
-          echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(strlen($email) < 1)
-          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(strpos($email,".")==False)
-          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(strlen($name)< 1)
-          echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(strlen($vname) <1)
-          echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(!isset($geschlecht))
-          echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(strlen($studiengang) <1)
-          echo "<br>Bitte wählen Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo "<br>Bitte wè‡§len Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
       else if(!isset($bday)){
-          echo"<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+          echo"<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
          
       }else {
           $passwortr=md5($passwortr);
@@ -318,7 +319,7 @@ if(isset($_GET["page"])){
               $control++;
           }
           if($control != 0){
-              echo "E-Mail wurde bereits verwendet... <a href=\"http://localhost/SVF/applications.html/Registrierung.php>zurück</a>";
+              echo "E-Mail wurde bereits verwendet... <a href=\"http://localhost/SVF/applications.html/Registrierung.php>zurï¿½k</a>";
           }else {
               $eintrag = "INSERT INTO benutzer
               (EMail, Passwort, Name, Vorname, Geschlecht, Studiengang, Geburtstag)
@@ -329,7 +330,7 @@ if(isset($_GET["page"])){
           }if ($eintragen== true){
               echo "Vielen Dank. Sie haben sich nun registriert..<a href=\"Index.php\">Jetzt anmelden</a>";
           }else{
-              echo "<br>Fehler. Bitte versuchen Sie es später erneut!";
+              echo "<br>Fehler. Bitte versuchen Sie es spèˆ©er erneut!";
           }
       }
     }
@@ -351,7 +352,7 @@ if(isset($_GET["page"])){
 					</ul>
 					<h3>Sport</h3>
 					<ul>
-						<li><a href="#">FuÃŸball</a></li>
+						<li><a href="#">Fuï¾ƒæ­Ÿall</a></li>
 						<li><a href="#">Volleyball</a></li>
 						<li><a href="#">Kanutour</a></li>
 						<li><a href="#">Joggen</a></li>
