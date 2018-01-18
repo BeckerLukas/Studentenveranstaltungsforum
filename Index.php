@@ -14,6 +14,7 @@ session_start();
 				padding:0;
 				font-family: fantasy;
 				line-height: 1.5em;
+				font-size: large;
 			}
 			
 			
