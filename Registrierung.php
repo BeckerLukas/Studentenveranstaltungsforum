@@ -151,7 +151,7 @@
 						<h1>Registrierung</h1>
 <?php if(!isset($_GET["page"])){
  ?>
-				<form action="Registrierung.php?page=2" method="post" enctype="multipart/form-data"> 
+				<form action="Registrierung.php" method="post" enctype="multipart/form-data"> 
 					<table>
 						<tr>
 							    <th ALIGN="LEFT">

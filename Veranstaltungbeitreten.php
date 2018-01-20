@@ -14,5 +14,7 @@
               (Teilnehmer, Veranstaltung)
               
               VALUES
-             ('$userid', '$veranstaltungsid2')";
-    $eintragen = mysqli_query($verbindung, $beitreten);
+             ('$userid', '$veranstaltungsid')";
+    $eintragen = mysqli_query($con, $beitreten);
+    
+ ?>

@@ -2,7 +2,9 @@
 include 'Loginverwaltung.php';
 session_start();
 $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+if(isset($_GET["page"])){
 $veranstaltungsid=$_GET['page'];
+
 $sql="SELECT * FROM veranstaltung v
     JOIN kategorie k ON v.Kategorie=KategorieID
     WHERE v.VeranstaltungsID = '$veranstaltungsid'
@@ -19,6 +21,8 @@ if(mysqli_num_rows($result) == 1){
     $ort=$veranstaltung["Ort"];
     $ersteller=$veranstaltung['Ersteller'];
 }
+}
+
 ?>
 <html>
 	<head>
@@ -198,6 +202,8 @@ if(mysqli_num_rows($result) == 1){
 				<div id="content">
 					<div class="innertube">
 						<h1>Veranstaltung</h1>
+						<?php if(isset($_GET["page"])){
+ ?>
 					<table>
 						<tr>
 							    <th>
@@ -217,10 +223,22 @@ if(mysqli_num_rows($result) == 1){
 							<?php if(logged_in()){
 							?>
 							<td>
-						
-						    <form action="Veranstaltungbeitreten.php" method=post">
-							<button type="submit" style="clear:right; value="">Teilnehmen</button>
+						    <?php if(prüfeTeilnahme($veranstaltungsid)== true){?>
+						    <form action="Veranstaltung.php?page='.$veranstaltungsid.'" method="post">
+						   <?php veranstaltungBeitreten($veranstaltungsid); ?>
+							<button type="submit" style="clear:right;" ">Teilnehmen</button>
 					        </form>
+					        <?php }else{ ?>
+					        <form action="Veranstaltung.php" method="post">
+						   <?php veranstaltungVerlassen($veranstaltungsid);
+						   $url="Veranstaltung.php?page=".$veranstaltungsid;
+						   if(prüfeTeilnahme($veranstaltungsid) == true){
+						   echo 'Sie wurden nun abgemeldet. <a href="Veranstaltung.php?page='.$veranstaltungsid.'"> zurück zur Startseite </a>';
+						   }
+						   ?>
+							<button type="submit" style="clear:right;" ">Austreten</button>
+					        </form>
+					        <?php }?>
 							</td>
 	                       <?php }?>
 							</th>
@@ -417,6 +435,7 @@ if(mysqli_num_rows($result) == 1){
 			</button>
 <?php }
 ?>
+<?php }?>
 					</div>
 				</div>
 			</main>

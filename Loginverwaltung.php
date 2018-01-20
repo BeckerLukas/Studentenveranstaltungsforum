@@ -85,6 +85,64 @@ function profilPrüfung($profilid)
         else 
             return false;        
 }
+function veranstaltungBeitreten($veranstaltungsid){
+$con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+$session = session_id();
+$sql="SELECT BenutzerID
+        FROM benutzer
+        WHERE Session='$session'";
+$result=mysqli_query($con, $sql);
+if(mysqli_num_rows($result) == 1){
+    $user= mysqli_fetch_assoc($result);
+    $userid=$user['BenutzerID'];
+}
 
+$beitreten="INSERT INTO beitreten
+              (Teilnehmer, Veranstaltung)
+              
+              VALUES
+             ('$userid', '$veranstaltungsid')";
+$eintragen = mysqli_query($con, $beitreten);
+}
 
+function prüfeTeilnahme($veranstaltungsid){
+    $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+    $session = session_id();
+    $sql="SELECT BenutzerID
+        FROM benutzer
+        WHERE Session='$session'";
+    $result=mysqli_query($con, $sql);
+    if(mysqli_num_rows($result) == 1){
+        $user= mysqli_fetch_assoc($result);
+        $userid=$user['BenutzerID'];
+    }
+    $prüfung="SELECT * 
+              FROM beitreten
+              WHERE Teilnehmer='$userid' AND Veranstaltung='$veranstaltungsid'";
+    $prüfen=mysqli_query($con, $prüfung);
+    if(mysqli_num_rows($prüfen) == 1){
+        return false;
+    }else{
+            return true;
+        }
+    
+    }
+    function veranstaltungVerlassen($veranstaltungsid){
+        $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+        $session = session_id();
+        $sql="SELECT BenutzerID
+        FROM benutzer
+        WHERE Session='$session'";
+        $result=mysqli_query($con, $sql);
+        if(mysqli_num_rows($result) == 1){
+            $user= mysqli_fetch_assoc($result);
+            $userid=$user['BenutzerID'];
+        }
+        
+        $verlassen="DELETE * FROM beitreten WHERE Teilnehmer = '$userid' AND Veranstaltung='$veranstaltungsid";
+        $löschen = mysqli_query($con, $verlassen);
+        
+        
+    }
+    
 ?>
