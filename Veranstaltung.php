@@ -224,19 +224,17 @@ if(mysqli_num_rows($result) == 1){
 							?>
 							<td>
 						    <?php if(prüfeTeilnahme($veranstaltungsid)== true){?>
-						    <form action="Veranstaltung.php?page='.$veranstaltungsid.'" method="post">
-						   <?php veranstaltungBeitreten($veranstaltungsid); ?>
-							<button type="submit" style="clear:right;" ">Teilnehmen</button>
+						    <form action="" method="post">
+						   <?php 
+						   veranstaltungBeitreten($veranstaltungsid);
+						   ?>
+							<button type="submit" style="clear:right;"  >Teilnehmen</button>
 					        </form>
 					        <?php }else{ ?>
-					        <form action="Veranstaltung.php" method="post">
+					         <form action="" method="post">
 						   <?php veranstaltungVerlassen($veranstaltungsid);
-						   $url="Veranstaltung.php?page=".$veranstaltungsid;
-						   if(prüfeTeilnahme($veranstaltungsid) == true){
-						   echo 'Sie wurden nun abgemeldet. <a href="Veranstaltung.php?page='.$veranstaltungsid.'"> zurück zur Startseite </a>';
-						   }
 						   ?>
-							<button type="submit" style="clear:right;" ">Austreten</button>
+							<button type="submit" style="clear:right;" >Austreten</button>
 					        </form>
 					        <?php }?>
 							</td>

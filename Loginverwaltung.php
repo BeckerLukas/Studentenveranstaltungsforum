@@ -139,10 +139,10 @@ function prüfeTeilnahme($veranstaltungsid){
             $userid=$user['BenutzerID'];
         }
         
-        $verlassen="DELETE * FROM beitreten WHERE Teilnehmer = '$userid' AND Veranstaltung='$veranstaltungsid";
-        $löschen = mysqli_query($con, $verlassen);
-        
-        
+        $verlassen="DELETE FROM beitreten WHERE Teilnehmer = '$userid' AND Veranstaltung ='$veranstaltungsid'";
+        $löschen= mysqli_query($con, $verlassen);
+     
     }
+   
     
 ?>

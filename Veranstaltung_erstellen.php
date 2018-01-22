@@ -113,7 +113,7 @@ if(logged_in()==false){
 			<tbody>
 							<tr>
 							    <th>
-							<label for="Begrüßung">Hallo, </label><?php echo begrüßung();?>
+							<label for="Begrüßung">Hallo, </label><?php echo begr��ung();?>
 							   </th>
 							</tr>
 							<tr>
