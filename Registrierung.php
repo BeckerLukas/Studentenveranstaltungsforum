@@ -151,7 +151,7 @@
 						<h1>Registrierung</h1>
 <?php if(!isset($_GET["page"])){
  ?>
-				<form action="Registrierung.php" method="post" enctype="multipart/form-data"> 
+				<form action="Registrierung.php?page=2" method="post" enctype="multipart/form-data"> 
 					<table>
 						<tr>
 							    <th ALIGN="LEFT">
@@ -238,7 +238,7 @@
 							</tr>
 							<tr>
 							<th ALIGN="LEFT">
-							<label for="passwd">Passwort bestﾃ､tigen:</label> 
+							<label for="passwd">Passwort best�tigen:</label> 
 							    </th>
 								<td>
 							<input id="passwd" name="passwd" type="password" onkeyup="checkPasswort()"> 
@@ -261,13 +261,6 @@
 							<button type="submit" style="clear:right;" name="upload" value="Upload">Anmelden</button>
 							</td>
 							</tr>
-	</form>
-							
-</form>
-    </select>
-  </label>
-</form>
-							</select>
 					
 							
 					</table>	

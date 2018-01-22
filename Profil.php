@@ -209,45 +209,39 @@ nav ul a {
 					</tr>
  <?php if(profilPr¸fung($profilid)==true){ ?>
     <tr>
+    <form action="NeuesPasswort.php" method="post">
 						<th ALIGN="LEFT"><label for="pass">altes Passwort:</label></th>
-						<td><input id="pass" name="pass" type="password"></td>
+						<td><input id="pass" name="pass_alt" type="password"></td>
 					</tr>
 					<tr>
 						<th ALIGN="LEFT"><label for="pass">neues Passwort:</label></th>
-						<td><input id="pass" name="pass" type="password"></td>
+						<td><input id="pass" name="pass_neu" type="password"></td>
 					</tr>
 					<tr>
 						<th ALIGN="LEFT"><label for="pass">Passwort best√§tigen:</label></th>
-						<td><input id="pass" name="pass" type="password"></td>
+						<td><input id="pass" name="passwd_neu" type="password">
+					
+						<button type="submit" style="clear: right;">Passwort ‰ndern</button>
+						</td>
+	</form>			
 					</tr>
 					<tr>
-						<form method="post" enctype="multipart/form-data">
+						<form action="Profilbild.php" method="post" enctype="multipart/form-data">
 
 							<th ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
 
 
 							<td><input name="datei" size="10px" type="file" size="50"
 								accept="img/*"> </label>
-								<button>hochladen</button></td>
+								<button type="submit" style="clear: right;" >hochladen</button></td>
 					
 					</tr>
-					<tr>
-						<td>
-
-							<button type="button" style="clear: right;">Anmelden</button>
-						</td>
-					</tr>
+				
 <?php
     
 }
     ?>
-        </form>
-
-					</form>
-					</select>
-					</label>
-					</form>
-					</select>
+        
 
 
 				</table>

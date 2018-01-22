@@ -223,20 +223,21 @@ if(mysqli_num_rows($result) == 1){
 							<?php if(logged_in()){
 							?>
 							<td>
-						    <?php if(prüfeTeilnahme($veranstaltungsid)== true){?>
+						    <?php if(prüfeTeilnahme($veranstaltungsid)){
+						    ?>
 						    <form action="" method="post">
 						   <?php 
 						   veranstaltungBeitreten($veranstaltungsid);
-						   ?>
-							<button type="submit" style="clear:right;"  >Teilnehmen</button>
+						   
+							echo "<button type='submit' style='clear:right;'  >Austreten</button>"; ?>
 					        </form>
-					        <?php }else{ ?>
+					        <?php }else if(!prüfeTeilnahme($veranstaltungsid)){ ?>
 					         <form action="" method="post">
 						   <?php veranstaltungVerlassen($veranstaltungsid);
-						   ?>
-							<button type="submit" style="clear:right;" >Austreten</button>
+						   
+							echo "<button type='submit' style='clear:right;' >Teilnehmen</button>"; ?>
 					        </form>
-					        <?php }?>
+					         <?php }?>
 							</td>
 	                       <?php }?>
 							</th>
@@ -346,24 +347,32 @@ if(mysqli_num_rows($result) == 1){
 						<td> 
 						
 						</td>
-							        <td> 
-							<textarea class="textb" cols="60" rows="7" maxlength="280" >Beitrag schreiben...
-							</textarea>
-							        </td>
-									
+						
+				        <td> 
+					   <form action="" method="post">							
+					   <textarea cols="60" rows="7" maxlength="280" name="inhalt" >Beitrag schreiben...
+					  </textarea>
+					  <?php 
+					  $inhalt = ($_POST["inhalt"]);
+					  if($inhalt == null){
+					      echo "Kein Nachricht vorhanden";
+					  }else{
+					  beitragSenden($veranstaltungsid, $inhalt);
+					  }
+					  ?>
+					  <br>
+					  <button type="submit" style="clear:right;">Senden</button>
+					  </form>
+					   </td>	
 						</tr>
 						<tr>
 							<td>
-							<button type="submit" style="clear:right;">Senden</button>
+						
+						    
+						    
 							</td>
-						</tr>
-	</form>
-							
-</form>
-    </select>
-  </label>
-</form>
-							</select>
+					</tr>
+	
 					
 							
 					</table>	

@@ -297,10 +297,10 @@ if(isset($_GET["page"])){
           $ersteller= mysqli_fetch_assoc($result);
           $ersteller=$ersteller['BenutzerID'];
           $eintrag = "INSERT INTO veranstaltung
-              (Ersteller, Kategorie, Veranstaltungsname, Datum, Uhrzeit, Beschreibung, Teilnehmerzahl)
+              (Ersteller, Kategorie, Veranstaltungsname, Datum, Uhrzeit, Beschreibung, Teilnehmerzahl, Ort)
 
               VALUES
-             ('$ersteller', '$kategorie', '$veranstaltungsname','$datum', '$uhrzeit', '$beschreibung', '$teilnehmerzahl')";
+             ('$ersteller', '$kategorie', '$veranstaltungsname','$datum', '$uhrzeit', '$beschreibung', '$teilnehmerzahl', '$ort')";
           $eintragen = mysqli_query($verbindung, $eintrag);
           }if ($eintragen== true){
               echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zurück zur Startseite</a>";

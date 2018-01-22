@@ -143,6 +143,58 @@ function prüfeTeilnahme($veranstaltungsid){
         $löschen= mysqli_query($con, $verlassen);
      
     }
-   
+    function beitragSenden($veranstaltungsid, $inhalt){
+        $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+        $session = session_id();
+        $sql="SELECT BenutzerID
+        FROM benutzer
+        WHERE Session='$session'";
+        $result=mysqli_query($con, $sql);
+        if(mysqli_num_rows($result) == 1){
+            $user= mysqli_fetch_assoc($result);
+            $userid=$user['BenutzerID'];
+        }
+        $senden="INSERT INTO beitrag
+              (Verfasser, Veranstaltung, Inhalt)   
+              VALUES
+             ('$userid', '$veranstaltungsid', '$inhalt')";
+        $beitragSenden= mysqli_query($con, $senden);
+    }
+   function neuesPasswort($pw_alt, $pw_neu){
+       $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+       $session = session_id();
+       $sql="SELECT Passwort
+        FROM benutzer
+        WHERE Session='$session'";
+           $result=mysqli_query($con, $sql);
+           if(mysqli_num_rows($result) == 1){
+               $user= mysqli_fetch_assoc($result);
+               $userPW=$user['Passwort'];
+           }
+           $pw_alt=md5($pw_alt);
+           if($userPW==$pw_alt){
+           $pw_neu=md5($pw_neu);
+           $neuesPW="UPDATE benutzer
+           SET Passwort='$pw_neu'
+           WHERE Session='$session'";
+           mysqli_query($con, $neuesPW);
+           echo "Passwort erfolgreich geändert!";
+          }else{
+              echo "Passwort falsch";
+          }
+   }
+   function profil(){
+       $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
+       $session = session_id();
+       $sql="SELECT BenutzerID
+        FROM benutzer
+        WHERE Session='$session'";
+       $result=mysqli_query($con, $sql);
+       if(mysqli_num_rows($result) == 1){
+           $user= mysqli_fetch_assoc($result);
+           $userid=$user['BenutzerID'];
+       return $userid;
+   }
+   }
     
 ?>
