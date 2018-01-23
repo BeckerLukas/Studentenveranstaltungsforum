@@ -18,6 +18,7 @@ WHERE BenutzerID = '$profilid'";
         $email = $profil['EMail'];
         $geburtstag = $profil['Geburtstag'];
         $studiengang = $profil['Studiengang'];
+        $profilbild = $profil['Profilbild'];
     }
     
     ?>
@@ -127,7 +128,11 @@ nav ul a {
 					<table>
 						<tbody>
 							<tr>
-								<th><label for="Begr√º√üung">Hallo, </label><?php echo begr¸ﬂung();?>
+								<th><label for="Begr√º√üung">Hallo, </label><?php
+    $greeting = begr¸ﬂung();
+    $userid = profil();
+    echo "<a href='Profil.php?page=$userid'>$greeting</a>";
+    ?>
 							   </th>
 							</tr>
 							<tr>
@@ -156,11 +161,22 @@ nav ul a {
 				<h1>Profil</h1>
 				<table>
 					<tr>
+						<th ALIGN="LEFT"><label for="vname">Profilbild:</label>
+						
+						<td>
+    <?php   echo "<img src ='$profilbild' alt'Profilbild' width='150' height='150'>"; ?>
+    				</td>
+						</th>
+
+					</tr>
+					<tr>
 						<th ALIGN="LEFT"><label for="name">Name:</label>
 						
 						<td>
     <?php echo $name?>
     
+						
+						
 						
 						</th>
 						<td></td>
@@ -169,8 +185,7 @@ nav ul a {
 							<button type="button" style="clear: right;">Profil l√∂schen</button>
 						</td>
 <?php
-    
-}
+    }
     ?>
     </tr>
 					<tr>
@@ -209,9 +224,10 @@ nav ul a {
 					</tr>
  <?php if(profilPr¸fung($profilid)==true){ ?>
     <tr>
-    <form action="NeuesPasswort.php" method="post">
-						<th ALIGN="LEFT"><label for="pass">altes Passwort:</label></th>
-						<td><input id="pass" name="pass_alt" type="password"></td>
+						<form action="NeuesPasswort.php" method="post">
+							<th ALIGN="LEFT"><label for="pass">altes Passwort:</label></th>
+							<td><input id="pass" name="pass_alt" type="password"></td>
+					
 					</tr>
 					<tr>
 						<th ALIGN="LEFT"><label for="pass">neues Passwort:</label></th>
@@ -220,26 +236,25 @@ nav ul a {
 					<tr>
 						<th ALIGN="LEFT"><label for="pass">Passwort best√§tigen:</label></th>
 						<td><input id="pass" name="passwd_neu" type="password">
-					
-						<button type="submit" style="clear: right;">Passwort ‰ndern</button>
+
+							<button type="submit" style="clear: right;">Passwort ‰ndern</button>
 						</td>
-	</form>			
+						</form>
 					</tr>
 					<tr>
-						<form action="Profilbild.php" method="post" enctype="multipart/form-data">
+						<form action="Profilbild.php" method="post"enctype="multipart/form-data">
 
-							<th ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
+							<th> ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
 
 
 							<td><input name="datei" size="10px" type="file" size="50"
-								accept="img/*"> </label>
-								<button type="submit" style="clear: right;" >hochladen</button></td>
-					
+								accept="img/*"> 
+								<button type="submit" style="clear: right;">hochladen</button></td>
+					</form>
 					</tr>
 				
 <?php
-    
-}
+    }
     ?>
         
 
@@ -254,26 +269,32 @@ nav ul a {
 			<div class="innertube">
 				<h3>Kultur</h3>
 				<ul>
-					<li><a href="#">Stadtbesichtigung</a></li>
-					<li><a href="#">Kneipentour</a></li>
-					<li><a href="#">Stadttheater</a></li>
-					<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-					<li><a href="#">Fest</a></li>
+					<li><a href="Index.php?page=14">Stadtbesichtigung</a></li>
+					<li><a href="Index.php?page=8">Kneipentour</a></li>
+					<li><a href="Index.php?page=15">Stadttheater</a></li>
+					<li><a href="Index.php?page=7">Kino</a></li>
+					<li><a href="Index.php?page=2">Fest</a></li>
+					<li><a href="Index.php?page=13">Reisen</a></li>
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="#">Fu√üball</a></li>
-					<li><a href="#">Volleyball</a></li>
-					<li><a href="#">Kanutour</a></li>
-					<li><a href="#">Joggen</a></li>
-					<li><a href="#">Yoga</a></li>
-					<li><a href="#">Kraftsport</a></li>
+					<li><a href="Index.php?page=4">Fu√üball</a></li>
+					<li><a href="Index.php?page=18">Volleyball</a></li>
+					<li><a href="Index.php?page=6">Kanutour</a></li>
+					<li><a href="Index.php?page=5">Joggen</a></li>
+					<li><a href="Index.php?page=19">Yoga</a></li>
+					<li><a href="Index.php?page=12">Radtour</a></li>
+					<li><a href="Index.php?page=10">Minigolf</a></li>
+					<li><a href="Index.php?page=12">Fitness</a></li>
 				</ul>
 				<h3>Freizeit</h3>
 				<ul>
-					<li><a href="#">Party</a></li>
-					<li><a href="#">Treffen</a></li>
-					<li><a href="#">Spieleabend</a></li>
+					<li><a href="Index.php?page=11">Party</a></li>
+					<li><a href="Index.php?page=17">Treffen</a></li>
+					<li><a href="Index.php?page=16">Spieleabend</a></li>
+					<li><a href="Index.php?page=1">B¸chergruppe</a></li>
+					<li><a href="Index.php?page=9">Lerngruppe</a></li>
+					<li><a href="Index.php?page=20">Sonstiges</a></li>
 
 				</ul>
 			</div>

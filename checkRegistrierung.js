@@ -27,10 +27,6 @@ function checkPasswort(){
 		document.getElementById ("passtext").style.color = "#ff0000";
 		
 	}
-	else if(passwortToCheck.match(/[\\,\[,\],\{,\},\",\',ö,ä,ü,Ö,Ä,Ü,ß]/)){
-		document.getElementById("passtext").textContent="Passwort darf keine Sonderzeichen enthalten!";
-		document.getElementById ("passtext").style.color = "#ff0000";
-	}
 	else if (passwortToCheck.length < 8 || passwortToCheck.length >20){
 	    document.getElementById("passtext").textContent="Passwortlänge stimmt nicht!";
 	    document.getElementById ("passtext").style.color = "#ff0000";

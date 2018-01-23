@@ -1,6 +1,7 @@
 <?php 
 include 'Loginverwaltung.php';
 session_start();
+veranstaltungenUpdate();
 ?>
 <!DOCTYPE html>
 <html>
@@ -138,7 +139,10 @@ session_start();
 			<tbody>
 							<tr>
 							    <th>
-							<label for="Begr√º√üung">Hallo, </label><?php echo begr¸ﬂung();?>
+							<label for="Begr√º√üung">Hallo, </label><?php 
+							$greeting=begr¸ﬂung();
+							$userid=profil();
+							echo "<a href='Profil.php?page=$userid'>$greeting</a>"; ?>
 							   </th>
 							</tr>
 							<tr>
@@ -173,6 +177,9 @@ session_start();
 						<p> Wir begr√º√üen DICH auf dem Veranstaltungsforum von und f√ºr Studenten der Hochschule-Hamm-Lippstadt. </p>
 						<h2>Aktuelle Meldungen</h2>
 						<p> Hier erwarten sie Mitteilungen zu √Ñnderungen des Studentenveranstaltungsforum. </p>
+						<?php if(logged_in()){?>
+						<a href="Veranstaltung_erstellen.php">Hier kˆnnen Sie eine neue Veranstaltung erstellen</a>
+						<?php }?>
 						<table border=9 cellspacing=8 cellpadding=21> 
 						<tr>
 							<th> Veranstaltungsname </th>
@@ -180,11 +187,12 @@ session_start();
 							<th> Kategorie </th>
 							<th> Verfasser </th>
 						</tr>
-						<tr>
-							<td><a href="#" >Fu√üball in Lippstadt </a> </td>
-							<td> 29.11.2017/ 15 Uhr </td>
-							<td><a href='#' >Sport</a> </td>
-							<td><a href="#" >Lukas Becker</a> </td>
+						<?php if(!isset($_GET["page"])){
+						tabelleAlleVeranstaltungen();
+						}else{
+						    $kategorie=$_GET['page'];
+						    tabelleKategorieVeranstaltungen($kategorie);
+						}?>
 						</table>
 			
 					</div>
@@ -195,26 +203,32 @@ session_start();
 				<div class="innertube">
 					<h3>Kultur</h3>
 					<ul>
-						<li><a href="#">Stadtbesichtigung</a></li>
-						<li><a href="#">Kneipentour</a></li>
-						<li><a href="#">Stadttheater</a></li>
-						<li><a href="https://www.cineplex.de/programm/heute/lippstadt/">Kino</a></li>
-						<li><a href="#">Fest</a></li>
+						<li><a href="Index.php?page=14">Stadtbesichtigung</a></li>
+						<li><a href="Index.php?page=8">Kneipentour</a></li>
+						<li><a href="Index.php?page=15">Stadttheater</a></li>
+						<li><a href="Index.php?page=7">Kino</a></li>
+						<li><a href="Index.php?page=2">Fest</a></li>
+						<li><a href="Index.php?page=13">Reisen</a></li>
 					</ul>
 					<h3>Sport</h3>
 					<ul>
-						<li><a href="#">Fu√üball</a></li>
-						<li><a href="#">Volleyball</a></li>
-						<li><a href="#">Kanutour</a></li>
-						<li><a href="#">Joggen</a></li>
-						<li><a href="#">Yoga</a></li>
-						<li><a href="#">Kraftsport</a></li>
+						<li><a href="Index.php?page=4">Fu√üball</a></li>
+						<li><a href="Index.php?page=18">Volleyball</a></li>
+						<li><a href="Index.php?page=6">Kanutour</a></li>
+						<li><a href="Index.php?page=5">Joggen</a></li>
+						<li><a href="Index.php?page=19">Yoga</a></li>
+						<li><a href="Index.php?page=12">Radtour</a></li>
+						<li><a href="Index.php?page=10">Minigolf</a></li>
+						<li><a href="Index.php?page=12">Fitness</a></li>
 					</ul>
 					<h3>Freizeit</h3>
 					<ul>
-						<li><a href="#">Party</a></li>
-						<li><a href="#">Treffen</a></li>
-						<li><a href="#">Spieleabend</a></li>
+						<li><a href="Index.php?page=11">Party</a></li>
+						<li><a href="Index.php?page=17">Treffen</a></li>
+						<li><a href="Index.php?page=16">Spieleabend</a></li>
+						<li><a href="Index.php?page=1">B¸chergruppe</a></li>
+						<li><a href="Index.php?page=9">Lerngruppe</a></li>
+						<li><a href="Index.php?page=20">Sonstiges</a></li>
 					
 					</ul>
 				</div>
