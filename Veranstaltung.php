@@ -423,7 +423,7 @@ echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>
                 $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
              FROM beitrag AS c
              LEFT JOIN benutzer AS b  ON (c.Verfasser = b.BenutzerID)
-             WHERE c.Veranstaltung = '1' 
+             WHERE c.Veranstaltung = '$veranstaltungsid' 
              ORDER BY `Zeit` DESC LIMIT 5";
                 $result = mysqli_query($con, $sql);
                 while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -438,7 +438,7 @@ echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>
                 $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
              FROM beitrag AS c
              LEFT JOIN benutzer AS b  ON (c.Verfasser = b.BenutzerID)
-             WHERE c.Veranstaltung = '1'
+             WHERE c.Veranstaltung = '$veranstaltungsid'
              ORDER BY `Zeit` DESC";
                 $result = mysqli_query($con, $sql);
                 while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
