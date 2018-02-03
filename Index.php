@@ -93,8 +93,7 @@ veranstaltungenUpdate();
 
 		<header id="header">
 			<div class="innertube">
-			<img src ="neu.png" alt"Studentenveranstaltungsforum"
-			width="150" height="135">
+			<a href='Index.php'><img src="neu.png" alt="Studentenveranstaltungsforum"width="150" height="135"></a>
 				<div style="float:right;">
 <?php if(logged_in() == false)
 {

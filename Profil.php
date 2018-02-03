@@ -1,27 +1,8 @@
 <?php
 include 'Loginverwaltung.php';
 session_start();
-if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung f√ºr diese Seite<a href="Index.php">zur√ºck zur Startseite</a>';
-} else {
-    ?>
-<?php
-    $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
-    $profilid = $_GET['page'];
-    $sql = "SELECT * FROM benutzer
-WHERE BenutzerID = '$profilid'";
-    $result = mysqli_query($con, $sql);
-    if (mysqli_num_rows($result) == 1) {
-        $profil = mysqli_fetch_assoc($result);
-        $name = $profil['Name'];
-        $vorname = $profil['Vorname'];
-        $email = $profil['EMail'];
-        $geburtstag = $profil['Geburtstag'];
-        $studiengang = $profil['Studiengang'];
-        $profilbild = $profil['Profilbild'];
-    }
-    
-    ?>
+?>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -120,32 +101,73 @@ nav ul a {
 
 	<header id="header">
 		<div class="innertube">
-			<img src="neu.png" alt"Studentenveranstaltungsforum"
-    width="150"
-				height="135">
+			<a href='Index.php'><img src="neu.png" alt="Studentenveranstaltungsforum"width="150" height="135"></a>
 			<div style="float: right;">
-				<form action="Ausloggen.php" method="post">
-					<table>
-						<tbody>
+				<?php if(logged_in() == false)
+{
+?>
+	<form action="Login.php" method="post">
+		<table>
+			<tbody>
 							<tr>
-								<th><label for="Begr√º√üung">Hallo, </label><?php
-    $greeting = begr¸ﬂung();
-    $userid = profil();
-    echo "<a href='Profil.php?page=$userid'>$greeting</a>";
-    ?>
+							    <th>
+							<label for="email">E-Mail</label>
+							   </th>
+							        <td> 
+							<input id="email" name="email"> 
+							        </td>
+							</tr>
+							<tr>
+							<th>
+							<label for="pass">Passwort</label> 
+							    </th>
+								<td>
+							<input id="pass" name="pass" type="password"> 
+							    </td>
+							</tr>
+							<tr>
+							<td> </td>
+							<td>
+							<button type="submit" id="login" name="login" value="Einloggen">Anmelden</button>
+						
+							<p> <a href="Registrierung.php">Noch nicht registriert ?</a></p>
+							</td>
+							</tr>
+		            
+				</tbody>
+			</table>	
+	 </form>
+	
+<?php 
+}else{
+?>
+       <form action="Ausloggen.php" method="post">
+		<table>
+			<tbody>
+							<tr>
+							    <th>
+							<label for="Begr√º√üung">Hallo, </label><?php 
+							$greeting=begr¸ﬂung();
+							$userid=profil();
+							echo "<a href='Profil.php?page=$userid'>$greeting</a>"; ?>
 							   </th>
 							</tr>
 							<tr>
-								<th>
-									<button type="submit" id="ausloggen" name="ausloggen"">Abmelden</button>
-								</th>
+							<th>
+							<button type="submit" id="ausloggen" name="ausloggen" ">Abmelden</button>
+							</th>
 							</tr>
+							
+							
+		            
+				</tbody>
+			</table>	
+	</form>
 
 
-
-						</tbody>
-					</table>
-				</form>
+<?php 
+}
+?>	
 
 			</div>
 
@@ -159,6 +181,29 @@ nav ul a {
 		<div id="content">
 			<div class="innertube">
 				<h1>Profil</h1>
+				
+<?php
+if (logged_in() == false) {
+    echo 'Sie haben keine Berechtigung f√ºr diese Seite <a href="Index.php">zur√ºck zur Startseite</a>';
+} else {
+ ?>
+ <?php 
+    $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
+    $profilid = $_GET['page'];
+    $sql = "SELECT * FROM benutzer
+WHERE BenutzerID = '$profilid'";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) == 1) {
+        $profil = mysqli_fetch_assoc($result);
+        $name = $profil['Name'];
+        $vorname = $profil['Vorname'];
+        $email = $profil['EMail'];
+        $geburtstag = $profil['Geburtstag'];
+        $studiengang = $profil['Studiengang'];
+        $profilbild = $profil['Profilbild'];
+    }
+    
+    ?>
 				<table>
 					<tr>
 						<th ALIGN="LEFT"><label for="vname">Profilbild:</label>
@@ -182,7 +227,7 @@ nav ul a {
 						<td></td>
  <?php if(profilPr¸fung($profilid)==true){ ?>
     <td>
-							<button type="button" style="clear: right;">Profil l√∂schen</button>
+							<input type='button' value='Profil lˆschen' onclick=window.location.href='Profilloeschen.php' />
 						</td>
 <?php
     }
@@ -244,7 +289,7 @@ nav ul a {
 					<tr>
 						<form action="Profilbild.php" method="post"enctype="multipart/form-data">
 
-							<th> ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
+							<th ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
 
 
 							<td><input name="datei" size="10px" type="file" size="50"
@@ -260,6 +305,9 @@ nav ul a {
 
 
 				</table>
+<?php
+}
+?>
 
 			</div>
 		</div>
@@ -310,6 +358,3 @@ nav ul a {
 
 </body>
 </html>
-<?php
-}
-?>

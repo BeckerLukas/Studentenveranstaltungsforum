@@ -1,9 +1,7 @@
 <?php
 include 'Loginverwaltung.php';
 session_start();
-if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung für diese Seite<a href="Index.php">zurück zur Startseite</a>';
-} else {
+
     ?>
 <html>
 <head>
@@ -103,32 +101,73 @@ nav ul a {
 
 	<header id="header">
 		<div class="innertube">
-			<img src="neu.png" alt="Studentenveranstaltungsforum"
-			width="150"
-				height="135">
+			<a href='Index.php'><img src="neu.png" alt="Studentenveranstaltungsforum"width="150" height="135"></a>
 			<div style="float: right;">
-				<form action="Ausloggen.php" method="post">
-					<table>
-						<tbody>
+				<?php if(logged_in() == false)
+{
+?>
+	<form action="Login.php" method="post">
+		<table>
+			<tbody>
 							<tr>
-								<th><label for="Begrüßung">Hallo, </label><?php
-    $greeting = begr��ung();
-    $userid = profil();
-    echo "<a href='Profil.php?page=$userid'>$greeting</a>";
-    ?>
+							    <th>
+							<label for="email">E-Mail</label>
+							   </th>
+							        <td> 
+							<input id="email" name="email"> 
+							        </td>
+							</tr>
+							<tr>
+							<th>
+							<label for="pass">Passwort</label> 
+							    </th>
+								<td>
+							<input id="pass" name="pass" type="password"> 
+							    </td>
+							</tr>
+							<tr>
+							<td> </td>
+							<td>
+							<button type="submit" id="login" name="login" value="Einloggen">Anmelden</button>
+						
+							<p> <a href="Registrierung.php">Noch nicht registriert ?</a></p>
+							</td>
+							</tr>
+		            
+				</tbody>
+			</table>	
+	 </form>
+	
+<?php 
+}else{
+?>
+       <form action="Ausloggen.php" method="post">
+		<table>
+			<tbody>
+							<tr>
+							    <th>
+							<label for="Begrüßung">Hallo, </label><?php 
+							$greeting=begr��ung();
+							$userid=profil();
+							echo "<a href='Profil.php?page=$userid'>$greeting</a>"; ?>
 							   </th>
 							</tr>
 							<tr>
-								<th>
-									<button type="submit" id="ausloggen" name="ausloggen">Abmelden</button>
-								</th>
+							<th>
+							<button type="submit" id="ausloggen" name="ausloggen" ">Abmelden</button>
+							</th>
 							</tr>
+							
+							
+		            
+				</tbody>
+			</table>	
+	</form>
 
 
-
-						</tbody>
-					</table>
-				</form>
+<?php 
+}
+?>	
 
 			</div>
 
@@ -143,6 +182,9 @@ nav ul a {
 			<div class="innertube">
 				<h1>Veranstaltung erstellen</h1>
 <?php
+if (logged_in() == false) {
+    echo 'Sie haben keine Berechtigung für diese Seite <a href="Index.php">zurück zur Startseite</a>';
+} else {
     
 if (! isset($_GET["page"])) {
         ?>
@@ -215,26 +257,16 @@ if (! isset($_GET["page"])) {
 						<tr>
 							<th ALIGN="LEFT"><label for="name">Ort:</label></th>
 							<td><input id="name" name="ort"></td>
-							<td><input type="button" value="Ort auf Karte anzeigen"
-								onclick="window.location.href='http://maps.google.com/?q'" /></td>
+							
 
 						</tr>
 						<td></td>
-						<td><script type="text/javascript"
-								src="http://maps.google.com/maps/api/js?sensor=false"></script>
-							<div style="overflow: hidden; height: 400px; width: 600px;">
-								<div id="map_canvas" style="height: 400px; width: 600px;"></div>
-								<a href="http://www.maps-einbinden.de">google maps fÃ¼r
-									webseite</a>
-							</div>
-							<script type="text/javascript">window.setTimeout("initGmaps();",300);function initGmaps(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.6712278, 8.340648099999953),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(51.6712278, 8.340648099999953)});infowindow = new google.maps.InfoWindow({content: "<b>Meine Adresse</b><br><br>Lippstadt"});google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
-
-						</td>
+						
 
 
 						<tr>
 							<td></td>
-							<td></td>
+							
 							<td>
 								<button type="submit" style="clear: right;">Veranstaltung
 									erstellen</button>
@@ -293,11 +325,12 @@ if (! isset($_GET["page"])) {
                 if ($eintragen == true) {
                     echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zurück zur Startseite</a>";
                 } else {
-                    echo "<br>Fehler. Bitte versuchen Sie es später erneut!";
+                    echo "<br>Fehler. Bitte versuchen Sie es später erneut! <a href=\"Index.php\">Zurück zur Startseite</a>";
                 }
             }
         }
     }
+}
     ?>
 					</div>
 		</div>
@@ -348,6 +381,4 @@ if (! isset($_GET["page"])) {
 
 </body>
 </html>
-<?php
-}
-?>
+

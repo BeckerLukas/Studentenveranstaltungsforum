@@ -122,9 +122,8 @@ nav ul a {
 
 	<header id="header">
 		<div class="innertube">
-			<img src="neu.png" alt="Studentenveranstaltungsforum"
-			width="150"
-				height="135">
+			<a href='Index.php'><img src="neu.png"
+				alt="Studentenveranstaltungsforum" width="150" height="135"></a>
 			<div style="float: right;">
 		<?php
 
@@ -234,8 +233,7 @@ if (logged_in() == false) {
                 echo "</form>";
                 ?>
 					        <?php
-            
-} else {
+            } else {
                 echo "<form action='Veranstaltungverlassen.php?page=$veranstaltungsid' method='post'>";
                 
                 echo "<button type='submit' style='clear:right;' >Austreten</button>";
@@ -269,9 +267,14 @@ if (logged_in() == false) {
 						
 						
 						
+						
+						
 						</th>
 <?php if(logged_in()){ ?>
 							
+					
+					
+					
 					
 					
 					
@@ -291,6 +294,8 @@ if (logged_in() == false) {
 						
 						
 						
+						
+						
 						<td>
 						
 						</th>
@@ -303,6 +308,8 @@ if (logged_in() == false) {
 						<td>
 							<?php echo $beschreibung ?>
 							   
+						
+						
 						
 						
 						
@@ -360,14 +367,7 @@ if (logged_in() == false) {
 
 					</tr>
 					<td></td>
-					<td ALIGN="LEFT"><script type="text/javascript"
-							src="http://maps.google.com/maps/api/js?sensor=false"></script>
-						<div style="overflow: hidden; height: 200px; width: 300px;">
-							<div id="map_canvas" style="height: 400px; width: 600px;"></div>
-							<a href="http://www.maps-einbinden.de">google maps fÃ¼r webseite</a>
-						</div> <script type="text/javascript">window.setTimeout("initGmaps();",300);function initGmaps(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.6712278, 8.340648099999953),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(51.6712278, 8.340648099999953)});infowindow = new google.maps.InfoWindow({content: "<b>Meine Adresse</b><br><br>Lippstadt"});google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
 
-					</td>
 
 
 					<tr>
@@ -375,13 +375,13 @@ if (logged_in() == false) {
 						<td></td>
 <?php if(profilPrüfung($ersteller)== true){  ?>
 							<td>
-							<button type="submit" style="clear: right;">Veranstaltung
-								bearbeiten</button>
+						<?php 	echo "<input type='button' value='Veranstaltung löschen' onclick=window.location.href='Veranstaltung_loeschen.php?id=$veranstaltungsid' />" ?>
 						</td>
 <?php
             }
             ?>
 							</tr>
+<?php if (!prüfeTeilnahme($veranstaltungsid)) {?>
 					<tr>
 						<th ALIGN="LEFT"><label for="text">Beitrag verfassen:</label></th>
 					</tr>
@@ -390,14 +390,14 @@ if (logged_in() == false) {
 
 						<td>
 						<?php
-            
-echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>";
-            echo "<textarea cols='60' rows='7' maxlength='280' name='inhalt'>Beitrag schreiben...</textarea>";
-            
-            echo "<br>
+                
+                echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>";
+                echo "<textarea cols='60' rows='7' maxlength='280' name='inhalt'>Beitrag schreiben...</textarea>";
+                
+                echo "<br>
 								<button type='submit' style='clear: right;'>Senden</button>
 							</form>";
-            ?>
+                ?>
 						</td>
 					</tr>
 					<tr>
@@ -418,40 +418,43 @@ echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>
 					</tr>
 					<tr>
 	<?php
-            if (! isset($_GET['button'])) {
-                $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
-                $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
+                if (! isset($_GET['button'])) {
+                    $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
+                    $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
              FROM beitrag AS c
              LEFT JOIN benutzer AS b  ON (c.Verfasser = b.BenutzerID)
              WHERE c.Veranstaltung = '$veranstaltungsid' 
              ORDER BY `Zeit` DESC LIMIT 5";
-                $result = mysqli_query($con, $sql);
-                while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
-                    echo "<td>" . $zeile['Inhalt'] . "</td>";
-                    echo "<td>" . $zeile['Zeit'] . "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
-                $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
+                    $result = mysqli_query($con, $sql);
+                    while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                        echo "<tr>";
+                        echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
+                        echo "<td>" . $zeile['Inhalt'] . "</td>";
+                        echo "<td>" . $zeile['Zeit'] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    $con = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
+                    $sql = "SELECT b.BenutzerID, b.Vorname, b.Name, c.Inhalt, c.Zeit
              FROM beitrag AS c
              LEFT JOIN benutzer AS b  ON (c.Verfasser = b.BenutzerID)
              WHERE c.Veranstaltung = '$veranstaltungsid'
              ORDER BY `Zeit` DESC";
-                $result = mysqli_query($con, $sql);
-                while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
-                    echo "<td>" . $zeile['Inhalt'] . "</td>";
-                    echo "<td>" . $zeile['Zeit'] . "</td>";
-                    echo "</tr>";
+                    $result = mysqli_query($con, $sql);
+                    while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                        echo "<tr>";
+                        echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
+                        echo "<td>" . $zeile['Inhalt'] . "</td>";
+                        echo "<td>" . $zeile['Zeit'] . "</td>";
+                        echo "</tr>";
+                    }
                 }
             }
-        }
-        ?>
+            
+            ?>
 			
+				
+				
 				
 				
 				
@@ -459,15 +462,18 @@ echo "<form action='Nachrichtgesendet.php?page=$veranstaltungsid' method='post'>
 				
 				</table>
 <?php
-        
-        if (logged_in()) {
-            if (! isset($_GET['button'])) {
-                echo "<form>";
-                echo "<input type='button' value='mehr..' onclick=window.location.href='Veranstaltung.php?page=$veranstaltungsid&button=1' />";
-                echo "</form>";
+            if (! prüfeTeilnahme($veranstaltungsid)) {
+                if (logged_in()) {
+                    if (! isset($_GET['button'])) {
+                        echo "<form>";
+                        echo "<input type='button' value='mehr..' onclick=window.location.href='Veranstaltung.php?page=$veranstaltungsid&button=1' />";
+                        echo "</form>";
+                    }
+                }
             }
         }
     }
+    
     ?>
 					</div>
 		</div>
