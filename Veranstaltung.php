@@ -35,6 +35,7 @@ body {
 	font-family: fantasy;
 	line-height: 1.5em;
 	font-size: large;
+	
 }
 
 button {
@@ -42,11 +43,13 @@ button {
 }
 
 table {
-	height: auto width: auto
+	height: auto; 
+	width: auto;
 }
 
 select {
-	height: auto width: auto
+	height: auto;
+	 width: auto;
 }
 
 #header {
@@ -64,6 +67,7 @@ main {
 	margin-bottom: -10000px;
 	float: left;
 	width: 100%;
+
 }
 
 #nav {
@@ -83,9 +87,10 @@ main {
 	padding: 4px 0;
 }
 
-#wrapper {
+ #wrapper {
 	overflow: hidden;
-}
+	
+} 
 
 #content {
 	margin-left: 230px; /* Same as 'nav' width */
@@ -334,8 +339,15 @@ if (logged_in() == false) {
 			  WHERE c.Veranstaltung = '$veranstaltungsid'
               ORDER BY `$filter` DESC";
             $result = mysqli_query($con, $sql);
+            $br= 5;
+            $count=0;
             while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                $count+=1;
                 echo "<a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> &nbsp &nbsp";
+                if($count >= $br){
+                    echo "<br>";
+                    $br+= 5;
+                }
             }
             ?>
 						 </td>
@@ -403,16 +415,23 @@ if (logged_in() == false) {
 					<tr>
 						<td></td>
 					</tr>
-
+<?php }
+            }
+?>
 
 
 				</table>
+				
+				<?php if(logged_in()){
+				    if(!pr�feTeilnahme($veranstaltungsid)){
+				        
+				?>
 				<table border=1 cellspacing=2 cellpadding=10
 					class="Tabellenbeiträge">
 					<h1 ALIGN="LEFT">Beiträge:</h1>
 					<tr>
 						<th ALIGN="LEFT">Nutzername:</th>
-						<th ALIGN="LEFT">Beitrag:</th>
+						<th ALIGN="LEFT" width="500px">Beitrag:</th>
 
 						<th ALIGN="LEFT">Erstellt:</th>
 					</tr>
@@ -429,7 +448,7 @@ if (logged_in() == false) {
                     while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         echo "<tr>";
                         echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
-                        echo "<td>" . $zeile['Inhalt'] . "</td>";
+                        echo "<td width='500px'>" . $zeile['Inhalt'] . "</td>";
                         echo "<td>" . $zeile['Zeit'] . "</td>";
                         echo "</tr>";
                     }
@@ -444,7 +463,7 @@ if (logged_in() == false) {
                     while ($zeile = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         echo "<tr>";
                         echo "<td><a href='Profil.php?page=" . $zeile['BenutzerID'] . "'>" . $zeile['Vorname'] . " " . $zeile['Name'] . "</a> </td>";
-                        echo "<td>" . $zeile['Inhalt'] . "</td>";
+                        echo "<td width='500px'>" . $zeile['Inhalt'] . "</td>";
                         echo "<td>" . $zeile['Zeit'] . "</td>";
                         echo "</tr>";
                     }

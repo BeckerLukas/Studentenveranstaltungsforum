@@ -183,10 +183,14 @@ nav ul a {
 			<div class="innertube">
 				<h1>Nachricht senden</h1>
 				
-<?php if ($inhalt == null || $inhalt=="Beitrag schreiben...") {
+<?php if ($inhalt == null or $inhalt=="Beitrag schreiben...") {
     echo "Kein Nachricht vorhanden <a href='Veranstaltung.php?page=$veranstaltungsid'>Zurück</a>";
-} else {
+} else if(prüfeNachricht($inhalt)==false){
+    echo "Bitte Kein spam! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zurück</a>";
+}
+    else {
     beitragSenden($veranstaltungsid, $inhalt);
+    echo prüfeNachricht($inhalt);
 }
 ?>
         

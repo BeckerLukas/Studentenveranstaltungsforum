@@ -250,5 +250,15 @@ function veranstaltungenUpdate()
             WHERE Datum < Current_Date()";
     $result = mysqli_query($con, $sql);
 }
-
+function prüfeNachricht($inhalt){
+    $teile = explode(" ", $inhalt);
+    for ($i = 0;$i < count($teile) ; $i++) {
+        if (strlen($teile[$i]) > 60) {
+            return false;
+        }
+    }
+       return true;
+       
+    
+}
 ?>
