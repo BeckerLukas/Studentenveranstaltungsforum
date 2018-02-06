@@ -6,7 +6,7 @@ veranstaltungenUpdate();
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 		<title> Studentenveranstaltungsforum; </title>
 		<style type="text/css">
 		
@@ -173,11 +173,11 @@ veranstaltungenUpdate();
 					<div class="innertube">
 						<h1>Aktuelle Veranstaltungen</h1>
 							
-						<p> Wir begrüßen DICH auf dem Veranstaltungsforum von und für Studenten der Hochschule-Hamm-Lippstadt. </p>
+						<p> Wir begr&uuml;&szlig;en dich auf dem Veranstaltungsforum von und für Studenten der Hochschule-Hamm-Lippstadt. </p>
 						<h2>Aktuelle Meldungen</h2>
 						<p> Hier erwarten sie Mitteilungen zu Änderungen des Studentenveranstaltungsforum. </p>
 						<?php if(logged_in()){?>
-						<a href="Veranstaltung_erstellen.php">Hier k�nnen Sie eine neue Veranstaltung erstellen</a>
+						<a href="Veranstaltung_erstellen.php">Hier k&ouml;nnen Sie eine neue Veranstaltung erstellen</a>
 						<?php }?>
 						<table border=9 cellspacing=8 cellpadding=21> 
 						<tr>
@@ -211,7 +211,7 @@ veranstaltungenUpdate();
 					</ul>
 					<h3>Sport</h3>
 					<ul>
-						<li><a href="Index.php?page=4">Fußball</a></li>
+						<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 						<li><a href="Index.php?page=18">Volleyball</a></li>
 						<li><a href="Index.php?page=6">Kanutour</a></li>
 						<li><a href="Index.php?page=5">Joggen</a></li>
@@ -225,7 +225,7 @@ veranstaltungenUpdate();
 						<li><a href="Index.php?page=11">Party</a></li>
 						<li><a href="Index.php?page=17">Treffen</a></li>
 						<li><a href="Index.php?page=16">Spieleabend</a></li>
-						<li><a href="Index.php?page=1">B�chergruppe</a></li>
+						<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 						<li><a href="Index.php?page=9">Lerngruppe</a></li>
 						<li><a href="Index.php?page=20">Sonstiges</a></li>
 					

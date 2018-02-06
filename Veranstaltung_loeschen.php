@@ -6,7 +6,7 @@ $veranstaltungsid = $_GET['id'];
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 <title>Studentenveranstaltungsforum;</title>
 <style type="text/css">
 body {
@@ -22,11 +22,13 @@ button {
 }
 
 table {
-	height: auto width: auto
+	height: auto;
+	 width: auto
 }
 
 select {
-	height: auto width: auto
+	height: auto;
+	 width: auto
 }
 
 #header {
@@ -176,10 +178,10 @@ nav ul a {
 		<main>
 		<div id="content">
 			<div class="innertube">
-				<h1>Veranstaltung löschen</h1>
+				<h1>Veranstaltung l&ouml;schen</h1>
 <?php 
 if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung fÃ¼r diese Seite <a href="Index.php">zurÃ¼ck zur Startseite</a>';
+    echo 'Sie haben keine Berechtigung f&uuml;r diese Seite <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 } else {
     ?>
 <?php
@@ -213,7 +215,7 @@ if (! isset($_GET["page"])) {
 							<td></td>
 							
 							<td>
-								<button type="submit" style="clear: right;">Veranstaltung löschen</button>
+								<button type="submit" style="clear: right;">Veranstaltung l&ouml;schen</button>
 							</td>
 						</tr>
 					</table>
@@ -248,9 +250,9 @@ if (! isset($_GET["page"])) {
                 }
                }
             if( $eintragen == true){
-                echo "Sie haben Ihre Veranstaltung erfolgreich gelöscht! <a href=\"Index.php\">Zurück zur Startseite</a>";
+                echo "Sie haben Ihre Veranstaltung erfolgreich gel&ouml;scht! <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 } else {
-                    echo "<br>Fehler. Bitte versuchen Sie es später erneut! <a href=\"Index.php\">Zurück zur Startseite</a>";
+                    echo "<br>Fehler. Bitte versuchen Sie es sp&auml;ter erneut! <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 }
             }
     }
@@ -275,7 +277,7 @@ if (! isset($_GET["page"])) {
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -289,7 +291,7 @@ if (! isset($_GET["page"])) {
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

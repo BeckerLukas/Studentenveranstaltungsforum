@@ -102,7 +102,7 @@ function veranstaltungBeitreten($veranstaltungsid)
               VALUES
              ('$userid', '$veranstaltungsid')";
     $eintragen = mysqli_query($con, $beitreten);
-    echo "Sie sind erfolgreich beigetreten! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zurück</a>";
+    echo "Sie sind erfolgreich beigetreten! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zur&uuml;ck</a>";
 }
 
 function prüfeTeilnahme($veranstaltungsid)
@@ -143,7 +143,7 @@ function veranstaltungVerlassen($veranstaltungsid)
     
     $verlassen = "DELETE FROM beitreten WHERE Teilnehmer = '$userid' AND Veranstaltung ='$veranstaltungsid'";
     $löschen = mysqli_query($con, $verlassen);
-    echo "Sie haben die Veranstaltung erfolgreich verlassen! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zurück</a>";
+    echo "Sie haben die Veranstaltung erfolgreich verlassen! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zur&uuml;ck</a>";
 }
 
 function beitragSenden($veranstaltungsid, $inhalt)
@@ -163,7 +163,7 @@ function beitragSenden($veranstaltungsid, $inhalt)
               VALUES
              ('$userid', '$veranstaltungsid', '$inhalt')";
     $beitragSenden = mysqli_query($con, $senden);
-    echo "Sie haben die Nachricht erfolgreich gesendet! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zurück</a>";
+    echo "Sie haben die Nachricht erfolgreich gesendet! <a href='Veranstaltung.php?page=$veranstaltungsid'>Zur&uuml;ck</a>";
 }
 
 function neuesPasswort($pw_alt, $pw_neu)

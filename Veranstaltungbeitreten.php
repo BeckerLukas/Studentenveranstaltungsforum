@@ -207,7 +207,7 @@ veranstaltungBeitreten($veranstaltungsid);
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -221,7 +221,7 @@ veranstaltungBeitreten($veranstaltungsid);
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

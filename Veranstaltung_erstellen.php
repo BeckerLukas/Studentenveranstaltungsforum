@@ -183,7 +183,7 @@ nav ul a {
 				<h1>Veranstaltung erstellen</h1>
 <?php
 if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung für diese Seite <a href="Index.php">zurück zur Startseite</a>';
+    echo 'Sie haben keine Berechtigung f&uuml;r diese Seite <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 } else {
     
 if (! isset($_GET["page"])) {
@@ -205,10 +205,10 @@ if (! isset($_GET["page"])) {
 							</th>
 							<td><select name="kategorie">
 
-									<option value="1">BÃ¼chergruppe</option>
+									<option value="1">B&uuml;chergruppe</option>
 									<option value="2">Fest</option>
 									<option value="3">Fitness</option>
-									<option value="4">FuÃŸball</option>
+									<option value="4">Fu&szlig;ball</option>
 									<option value="5">Joggen</option>
 									<option value="6">Kanutour</option>
 									<option Value="7">Kino</option>
@@ -292,18 +292,20 @@ if (! isset($_GET["page"])) {
             $datum_aktuell = date("Y-m-d", $timestamp);
             
             if (strlen($veranstaltungsname) < 1)
-                echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
+                echo "<br>Bitte geben Sie den Namen Ihrer Veranstaltung an. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
             else if ($teilnehmerzahl < 1) {
                 print $teilnehmerzahl;
-                echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
+                echo "<br>Bitte geben Sie Ihr Ihre maximale Teilnehmeranzahl an.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
             } else if (strlen($beschreibung) < 1)
-                echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
+                echo "<br>Bitte beschreiben Sie Ihr Veranstaltung.  Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
             else if (! isset($datum))
-                echo "<br>Bitte wählen Sie ein Datum für Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zurück</a>";
+                echo "<br>Bitte wählen Sie ein Datum f&uuml;r Ihre Veranstaltung aus. Bitte wiederhole deine Eingabe...<a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
             else if (strlen($ort) < 1)
-                echo "<br>Bitte geben Sie den gewünschten Ort der Veranstaltung an! <a href=Veranstaltung_erstellen.php>zurück</a>";
-            else if ($datum < $datum_aktuell) {
-                echo "<br>Bitte geben Sie ein aktuelles Datum an! <a href=Veranstaltung_erstellen.php>zurück</a>";
+                echo "<br>Bitte geben Sie den gew&uuml;nschten Ort der Veranstaltung an! <a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
+            else if ($datum < $datum_aktuell) 
+                echo "<br>Bitte geben Sie ein aktuelles Datum an! <a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
+            elseif(pr�feNachricht($beschreibung)== false){
+                echo "<br>Bitte schreiben Sie eine Beschreibung mit W&ouml;rtern die nicht gr��er als 60 Zeichen sind! <a href=Veranstaltung_erstellen.php>zur&uuml;ck</a>";
             } else {
                 $verbindung = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
                 $session = session_id();
@@ -323,9 +325,9 @@ if (! isset($_GET["page"])) {
                     $eintragen = mysqli_query($verbindung, $eintrag);
                 }
                 if ($eintragen == true) {
-                    echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zurück zur Startseite</a>";
+                    echo "Sie haben die Veranstaltung erstellt <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 } else {
-                    echo "<br>Fehler. Bitte versuchen Sie es später erneut! <a href=\"Index.php\">Zurück zur Startseite</a>";
+                    echo "<br>Fehler. Bitte versuchen Sie es sp&auml;ter erneut! <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 }
             }
         }
@@ -349,7 +351,7 @@ if (! isset($_GET["page"])) {
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">Fußball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -363,7 +365,7 @@ if (! isset($_GET["page"])) {
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">B�chergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

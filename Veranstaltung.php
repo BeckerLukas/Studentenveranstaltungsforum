@@ -310,7 +310,7 @@ if (logged_in() == false) {
 					<tr>
 						<th ALIGN="LEFT">Beschreibung:
 						
-						<td>
+						<td width="500px">
 							<?php echo $beschreibung ?>
 							   
 						
@@ -387,7 +387,7 @@ if (logged_in() == false) {
 						<td></td>
 <?php if(profilPr¸fung($ersteller)== true){  ?>
 							<td>
-						<?php 	echo "<input type='button' value='Veranstaltung lˆschen' onclick=window.location.href='Veranstaltung_loeschen.php?id=$veranstaltungsid' />" ?>
+						<?php 	echo "<input type='button' value='Veranstaltung l&ouml;schen' onclick=window.location.href='Veranstaltung_loeschen.php?id=$veranstaltungsid' />" ?>
 						</td>
 <?php
             }
@@ -512,7 +512,7 @@ if (logged_in() == false) {
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">Fu√üball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>

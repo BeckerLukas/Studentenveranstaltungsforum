@@ -239,23 +239,23 @@ if (isset($_GET["page"])) {
         $bday = ($_POST["bday"]);
         
         if ($passwortr != $passwortwd)
-            echo "<br>Ihre Passwter stimmen nicht �erein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Ihre Passw&ouml;ter stimmen nicht &uuml;berein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strlen($passwortr) > 20 or strlen($passwortr) < 8)
-            echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strlen($email) < 1)
-            echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strpos($email, ".") == False)
-            echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihre HSHL E-Mail Adresse ein.Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strlen($name) < 1)
-            echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihren Namen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strlen($vname) < 1)
-            echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihren Vornamen ein. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (! isset($geschlecht))
-            echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihr Geschlecht an.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (strlen($studiengang) < 1)
-            echo "<br>Bitte w臧len Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte w臧len Sie Ihren Studiengang aus.  Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         else if (! isset($bday)) {
-            echo "<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur�k</a>";
+            echo "<br>Bitte geben Sie Ihr Geburtsdatum an. Bitte wiederhole deine Eingabe...<a href=Registrierung.php>zur&uuml;k</a>";
         } else {
             $passwortr = md5($passwortr);
             $email = $email . "@stud.hshl.de";
@@ -280,7 +280,7 @@ if (isset($_GET["page"])) {
             if ($eintragen == true) {
                 echo "Vielen Dank. Sie haben sich nun registriert..<a href=\"Index.php\">Jetzt anmelden</a>";
             } else {
-                echo "<br>Fehler. Bitte versuchen Sie es sp舩er erneut!";
+                echo "<br>Fehler. Bitte versuchen Sie es sp&auml;ter erneut!";
             }
         }
     }
@@ -303,7 +303,7 @@ if (isset($_GET["page"])) {
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">Fußball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -317,7 +317,7 @@ if (isset($_GET["page"])) {
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">B�chergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

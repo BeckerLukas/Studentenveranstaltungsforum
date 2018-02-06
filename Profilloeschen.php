@@ -175,10 +175,10 @@ nav ul a {
 		<main>
 		<div id="content">
 			<div class="innertube">
-				<h1>Profil löschen</h1>
+				<h1>Profil l&ouml;schen</h1>
 <?php 
 	if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung fÃ¼r diese Seite <a href="Index.php">zurÃ¼ck zur Startseite</a>';
+    echo 'Sie haben keine Berechtigung f&uuml;r diese Seite <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 } else {
     ?>
 <?php
@@ -228,7 +228,7 @@ if (! isset($_GET["page"])) {
             
             
             if ($pass != $passwd){
-                echo "<br>Passwörter stimmen nicht überein. Bitte wiederhole deine Eingabe...<a href=Profilloeschen.php>zurück</a>";
+                echo "<br>Passwörter stimmen nicht überein. Bitte wiederhole deine Eingabe...<a href=Profilloeschen.php>zur&uuml;ck</a>";
             } else {
                 $verbindung = mysqli_connect('localhost', 'test', '12345678', 'SVF') or die(mysql_error());
                 $session = session_id();
@@ -240,9 +240,9 @@ if (! isset($_GET["page"])) {
             if( $loeschen == true){
                 $veranstaltungen = "DELETE FROM veranstaltung WHERE Ersteller = '$profil'";
                 $veranstaltungenloeschen= mysqli_query($verbindung, $veranstaltungen);
-                echo "Sie haben Ihr Profil erfolgreich gelöscht! <a href=\"Index.php\">Zurück zur Startseite</a>";
+                echo "Sie haben Ihr Profil erfolgreich gelöscht! <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 } else {
-                    echo "<br>Fehler. Bitte versuchen Sie es später erneut! <a href=\"Index.php\">Zurück zur Startseite</a>";
+                    echo "<br>Fehler. Bitte versuchen Sie es später erneut! <a href=\"Index.php\">Zur&uuml;ck zur Startseite</a>";
                 }
             }
     }
@@ -267,7 +267,7 @@ if (! isset($_GET["page"])) {
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -281,7 +281,7 @@ if (! isset($_GET["page"])) {
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

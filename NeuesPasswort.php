@@ -185,13 +185,13 @@ nav ul a {
 		<main>
 		<div id="content">
 			<div class="innertube">
-				<h1>Passwort ändern</h1>
+				<h1>Passwort &auml;ndern</h1>
 				
 <?php 
 if($pass_neu != $passwd_neu)
-    echo "<br>Ihre Passwî’šter stimmen nicht Überein.Bitte wiederhole deine Eingabe...<a href=$url>zurï¿½k</a>";
+    echo "<br>Ihre Passw&ouml;ster stimmen nicht Überein.Bitte wiederhole deine Eingabe...<a href=$url>zur&uuml;ck</a>";
     else if (strlen($pass_neu) > 20 or strlen($pass_neu) < 8 )
-        echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein.Bitte wiederhole deine Eingabe...<a href=$url>zurï¿½k</a>";
+        echo "<br>Ihr Passwort muss zwischen 8 und 20 Zeichen lang sein.Bitte wiederhole deine Eingabe...<a href=$url>zur&uuml;ck</a>";
         else{
             neuesPasswort($pass_alt, $pass_neu);
         }
@@ -218,7 +218,7 @@ if($pass_neu != $passwd_neu)
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -232,7 +232,7 @@ if($pass_neu != $passwd_neu)
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

@@ -184,7 +184,7 @@ nav ul a {
 				
 <?php
 if (logged_in() == false) {
-    echo 'Sie haben keine Berechtigung f√ºr diese Seite <a href="Index.php">zur√ºck zur Startseite</a>';
+    echo 'Sie haben keine Berechtigung f&uuml;r diese Seite <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 } else {
  ?>
  <?php 
@@ -227,7 +227,7 @@ WHERE BenutzerID = '$profilid'";
 						<td></td>
  <?php if(profilPr¸fung($profilid)==true){ ?>
     <td>
-							<input type='button' value='Profil lˆschen' onclick=window.location.href='Profilloeschen.php' />
+							<input type='button' value='Profil l&ouml;schen' onclick=window.location.href='Profilloeschen.php' />
 						</td>
 <?php
     }
@@ -279,17 +279,17 @@ WHERE BenutzerID = '$profilid'";
 						<td><input id="pass" name="pass_neu" type="password"></td>
 					</tr>
 					<tr>
-						<th ALIGN="LEFT"><label for="pass">Passwort best√§tigen:</label></th>
+						<th ALIGN="LEFT"><label for="pass">Passwort best&auml;tigen:</label></th>
 						<td><input id="pass" name="passwd_neu" type="password">
 
-							<button type="submit" style="clear: right;">Passwort ‰ndern</button>
+							<button type="submit" style="clear: right;">Passwort &auml;ndern</button>
 						</td>
 						</form>
 					</tr>
 					<tr>
 						<form action="Profilbild.php" method="post"enctype="multipart/form-data">
 
-							<th ALIGN="LEFT"><label for="pic">Profilbild √§ndern:</label></th>
+							<th ALIGN="LEFT"><label for="pic">Profilbild &auml;ndern:</label></th>
 
 
 							<td><input name="datei" size="10px" type="file" size="50"
@@ -326,7 +326,7 @@ WHERE BenutzerID = '$profilid'";
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">Fu√üball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -340,7 +340,7 @@ WHERE BenutzerID = '$profilid'";
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">B¸chergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

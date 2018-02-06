@@ -153,7 +153,7 @@ if (isset($_POST['login']))
     $userid=check_user($_POST['email'], $_POST['pass']);
     if ($userid != false){
         login($userid);
-        echo "Login Erfolgreich! <a href=Index.php> zurück zur Startseite</a>";
+        echo "Login Erfolgreich! <a href=Index.php> zur&uuml;ck zur Startseite</a>";
     } else
         echo "Ihre Anmeldedaten waren nicht korrekt! Versuchen Sie es erneut:
         <form action='Login.php' method='post'>
@@ -211,7 +211,7 @@ if (isset($_POST['login']))
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -225,7 +225,7 @@ if (isset($_POST['login']))
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

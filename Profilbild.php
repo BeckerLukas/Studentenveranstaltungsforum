@@ -185,7 +185,7 @@ nav ul a {
 		<main>
 		<div id="content">
 			<div class="innertube">
-				<h1>Passwort ändern</h1>
+				<h1>Profilbild &auml;ndern</h1>
 				
 <?php 
 //Überprüfung der Dateiendung
@@ -197,7 +197,7 @@ if(!in_array($extension, $allowed_extensions)) {
 //Überprüfung der Dateigröße
 $max_size = 250*1024; //250 KB
 if($_FILES['datei']['size'] > $max_size) {
-    die("Bitte keine Dateien größer 250kb hochladen");
+    die("Bitte keine Dateien gr&ouml;&szlig;er 250kb hochladen");
 }
 
 //Überprüfung dass das Bild keine Fehler enthält
@@ -223,7 +223,7 @@ if(file_exists($new_path)) { //Falls Datei existiert, hänge eine Zahl an den Dat
 
 //Alles okay, verschiebe Datei an neuen Pfad
 move_uploaded_file($_FILES['datei']['tmp_name'], $new_path);
-echo "Bild erfolgreich hochgeladen.<a href='$url''>zurück</a>";
+echo "Bild erfolgreich hochgeladen.<a href='$url''>zur&uuml;ck</a>";
 $con=mysqli_connect('localhost','test','12345678', 'SVF') or die(mysql_error());
 $session = session_id();
 
@@ -251,7 +251,7 @@ mysqli_query($con, $neuesPB);
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -265,7 +265,7 @@ mysqli_query($con, $neuesPB);
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 

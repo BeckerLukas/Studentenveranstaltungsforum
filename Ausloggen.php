@@ -185,9 +185,9 @@ nav ul a {
 <?php 
 logout();
 if (!logged_in()){
-    echo 'Sie wurden nun abgemeldet <a href="Index.php">zurück zur Startseite</a>';
+    echo 'Sie wurden nun abgemeldet <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 }else {
-    echo 'Fehler! Sie sind weiterhin angemeldet. <a href="Index.php">zurück zur Startseite</a>';
+    echo 'Fehler! Sie sind weiterhin angemeldet. <a href="Index.php">zur&uuml;ck zur Startseite</a>';
 }
 ?>
         
@@ -212,7 +212,7 @@ if (!logged_in()){
 				</ul>
 				<h3>Sport</h3>
 				<ul>
-					<li><a href="Index.php?page=4">FuÃŸball</a></li>
+					<li><a href="Index.php?page=4">Fu&szlig;ball</a></li>
 					<li><a href="Index.php?page=18">Volleyball</a></li>
 					<li><a href="Index.php?page=6">Kanutour</a></li>
 					<li><a href="Index.php?page=5">Joggen</a></li>
@@ -226,7 +226,7 @@ if (!logged_in()){
 					<li><a href="Index.php?page=11">Party</a></li>
 					<li><a href="Index.php?page=17">Treffen</a></li>
 					<li><a href="Index.php?page=16">Spieleabend</a></li>
-					<li><a href="Index.php?page=1">Büchergruppe</a></li>
+					<li><a href="Index.php?page=1">B&uuml;chergruppe</a></li>
 					<li><a href="Index.php?page=9">Lerngruppe</a></li>
 					<li><a href="Index.php?page=20">Sonstiges</a></li>
 
