@@ -110,10 +110,10 @@ CREATE TABLE `kategorie` (
 --
 
 INSERT INTO `kategorie` (`KategorieID`, `Bezeichnung`) VALUES
-(1, 'Büchergruppe'),
+(1, 'B&uuml;chergruppe'),
 (2, 'Fest'),
 (3, 'Fitness'),
-(4, 'Fußball'),
+(4, 'Fu&szlig;ball'),
 (5, 'Joggen'),
 (6, 'Kanutour'),
 (7, 'Kino'),
