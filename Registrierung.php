@@ -199,7 +199,7 @@ if (! isset($_GET["page"])) {
 								onkeyup="checkPasswort()"></td>
 						</tr>
 						<tr>
-							<th ALIGN="LEFT"><label for="passwd">Passwort bestätigen:</label>
+							<th ALIGN="LEFT"><label for="passwd">Passwort best&auml;tigen:</label>
 							</th>
 							<td><input id="passwd" name="passwd" type="password"
 								onkeyup="checkPasswort()"></td>

@@ -23,16 +23,16 @@ function checkPasswort(){
 			document.getElementById ("passtext").style.color = "#ff0000";
 		}
 	else if(passwortToCheck != passwort2ToCheck){
-		document.getElementById("passtext").textContent="Passw&ouml;rter stimmen nicht überein!";
+		document.getElementById("passtext").textContent="Passwörter stimmen nicht überein!";
 		document.getElementById ("passtext").style.color = "#ff0000";
 		
 	}
 	else if (passwortToCheck.length < 8 || passwortToCheck.length >20){
-	    document.getElementById("passtext").textContent="Passwortl&auml;nge stimmt nicht!";
+	    document.getElementById("passtext").textContent="Passwortlänge stimmt nicht!";
 	    document.getElementById ("passtext").style.color = "#ff0000";
 		}
 	else if(passwortToCheck.match(/[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]/)==null){ 
-		document.getElementById("passtext").textContent="Enth&auml;lt keinen Groß&szlig;uchstaben!";
+		document.getElementById("passtext").textContent="Enthält keinen Großbuchstaben!";
 	    document.getElementById ("passtext").style.color = "#ff0000";
 		}
 			
